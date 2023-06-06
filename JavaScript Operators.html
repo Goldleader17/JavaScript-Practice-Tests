@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+<!--String Operators-->
+
+        <h1>JavaScript String Operators</h1>
+
+        <p>All conditional operators can be used on both numbers and strings.</p>
+
+        <p id="demo"></p>
+
+        <script>
+            let text1 = 'A';
+            let text2 = 'B';
+            let result = text1 < text2;
+            document.getElementById('demo').innerHTML = 'Is A less than B? ' + result;
+        </script>
+
+        <script>
+            let text3 = 'What a very ';
+            text3 += 'nice day';
+            document.getElementById('demo').innerHTML = text3;
+        </script>
+
+        <!--Note that strings are compared alphabetically, also the + & += operator concatenates (adds) strings.
+        When used on strings, the + operator is called the concatenation operator.
+        Adding two numbers will return the sum, but adding a number and a string will return a string.-->
+
+    </body>
+</html>

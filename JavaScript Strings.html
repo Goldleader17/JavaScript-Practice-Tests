@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Strings</h2>
+    <p id="demo"></p>
+
+    <script>
+        // x is a string
+        let x = "John";
+         // y is an object
+        let y = new String("John");
+
+        document.getElementById("demo").innerHTML = typeof x + "<br>" + typeof y;
+    </script>
+
+    <!--Do not create string objects. The "new" keyword complicates the code and slows down execution speed.
+    String objects can produce unexpected results. Comparing two JavaScript objects always returns false.-->
+</body>
+</html>

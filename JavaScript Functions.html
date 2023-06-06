@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <section>
+        <h1>JavaScript Functions</h1>
+
+        <p>Call a function which performs a calculation and returns the results:</p>
+        <p id="demo"></p>
+
+        <script>
+        function myFunction(p1, p2) {
+            return p1 * p2;
+        }
+        let result = myFunction(4, 3);
+        document.getElementById("demo").innerHTML = result;
+        </script>
+    </section>
+
+    <section>
+        <p>Invoke (call) a function that converts from Fahrenheit to Celsius:</p>
+        <p id="demo1"></p>
+
+        <script>
+            function toCelsius(f) {
+                return (5/9) * (f-32);
+            }
+            let value = toCelsius(77);
+            document.getElementById("demo1").innerHTML = value;
+        </script>
+    </section>
+
+    <section>
+        <p>Using a function as a variable:</p>
+        <p id="demo2"></p>
+
+        <script>
+            let text = "The temperature is " + toCelsius(77) + " Calsius.";
+            document.getElementById("demo2").innerHTML = text;
+
+            function toCelsius(fahrenheit) {
+                return (5/9) * (fahrenheit-32);
+            }
+        </script>
+    </section>
+
+    <section>
+        <h2>JavaScript Objects</h2>
+        <p id="demo3"></p>
+
+        <script>
+            const person = {
+                firstName:"John", 
+                lastName:"Doe", 
+                age: 50, 
+                eyeColor:"blue",
+                fullName: function() {
+                    return this.firstName + " " + this.lastName;
+                }
+            };
+            // Display some data from the object:
+            document.getElementById("demo3").innerHTML = 
+            person.fullName() + " is " + person.age + " years old.";
+        </script>
+    </section>
+    
+</body>
+</html>
+
+<!--With functions you can reuse code, You can write code that can be used many times.
+You can use the same code with different arguments, to produce different results.
+
+Accessing a function with incorrect parameters can return an incorrect answer.
+Accessing a function without () returns the function and not the function result.
+
+Variables declared within a JavaScript function, become LOCAL to function.
+Local variable can only be accessed from within the function.
+
+JavaScript objects are containers for named values called properties.
+A method is a functon stored as a property.
+
+NB: "this" is not a variable. It's a keyword. You can't change the value of "this"
+
+When a JavaScript variable is declared with the keyword "new", the variableis created as an object.
+Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed.-->

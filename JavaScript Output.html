@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <!--Using inner.HTML-->
+
+        <h2>My First Web Page</h2>
+        <p>My First Paragraph.</p>
+
+        <p id="demo"></p>
+
+        <script>
+            document.getElementById("demo").innerHTML = 5 + 6;
+        </script>
+
+        <!--Using document.write()-->
+
+        <h2>My First Web Page</h2>
+        <p>My First Paragraph.</p>
+
+        <p>Never call document.write after the document has finished loading. It will overwrite the whole document.</p>
+
+        <script>
+            document.write(5 + 6);
+        </script>
+
+        <!--NB: Using document.write() after an HTML document iis loaded, will delete all existing HTML. The document.write() method should only be used for testing.-->
+
+        <!--Using window.alert()-->
+
+        <h2>My First Web Page</h2>
+        <p>My First Paragraph.</p>
+
+        <script>
+            window.alert(5 + 6);
+        </script>
+
+        <!--OR-->
+
+        <script>
+            alert(5 + 6);
+        </script>
+
+        <!--Using console.log()-->
+
+        <h2>Activate Debugging</h2>
+
+        <p>F12 on your keyboard will activate debugging.</p>
+        <p>Then select "Console" in the debugger menu.</p>
+        <p>Then click Run again.</p>
+
+        <script>
+            console.log(5 + 6);
+        </script>
+
+        <h2>The window.print() Method</h2>
+
+        <p>Click the button to print the current page.</p>
+
+        <button onclick="window.print()">Print this page</button>
+
+    </body>
+</html>
