@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--A regular expression is a sequence of characters that forms a search pattern.
+        The search pattern can be used for text search and text replace operations.
+        Syntax => /pattern/modifiers;
+        Example => /w3schools/i;
+    -->
+
+<!--Using test()-->
+
+    <h2>JavaScript Regular Expressions</h2>
+
+    <p>Search for an "e" in the next paragraph:</p>
+
+    <p id="p01">The best things in life are free!</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let text = 
+        document.getElementById("p01").innerHTML;
+        const pattern = /e/;
+        document.getElementById("demo").innerHTML = pattern.test(text);
+    </script>
+
+<!--Using exec()-->
+
+    <p id="demo1"></p>
+
+    <script>
+        const obj = /e/.exec("The best things in life are free!");
+        
+        document.getElementById("demo1").innerHTML = 
+        "Found " + obj[0] + " in position " + obj.index + " in the text: " + obj.input;
+    </script>
+
+</body>
+</html>

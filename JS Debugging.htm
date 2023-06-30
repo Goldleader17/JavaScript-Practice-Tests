@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--Errors can (will) happen, every time you write some new computer code.
+        Searching for (and fixing) errors in programming code is called code debugging.
+    -->
+
+    <!--The console.log() Method-->
+
+    <h2>My First Web Page</h2>
+
+    <p>Activate debugging in your browser (Chrome, IE, Firefox) with F12, and select "Console" in the debugger menu.</p>
+
+    <script>
+        a = 5;
+        b = 6;
+        c = a + b;
+        console.log(c);
+    </script>
+
+    <!--The debugger Keyword-->
+
+    <h2>JavaScript Debugger</h2>
+
+    <p id="demo"></p>
+
+    <p>With the debugger turned on, the code below should stop executing before it executes the third line.</p>
+
+    <script>
+        let x = 15 * 5;
+        debugger;
+        document.getElementById("demo").innerHTML = x;
+    </script>
+
+    <!--Debugging is the process of testing, finding, and reducing bugs (errors) in computer programs.
+        The first known computer bug was a real bug (an insect) stuck in the electronics.
+    -->
+
+</body>
+</html>

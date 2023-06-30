@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--JSON stands for JavaScript Object Notation.
+        JSON is a lightweight data interchange format.
+        JSON is language independent *
+        JSON is "self-describing" and easy to understand.
+
+        * The JSON syntax is derived from JavaScript object notation syntax, but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+
+    -->
+
+    <!--It's a format for storing and transporting data.
+        It is often used when data is sent from a server to a web page.
+    -->
+
+    <!--JSON Syntax Rules:
+        * Data is in name/value pairs.
+        * Data is seperated by commas.
+        * Curly braces hold objects.
+        * Square brackets hold arrays.
+    -->
+
+    <!--JSON Data:
+        "firstName":"John"
+
+        NB: JSON names require double quotes. JavaScript names do not.
+    -->
+
+    <!--JSON Objects:
+        {"firstName":"John",
+        "lastName":"Doe"}
+
+        NB: Just like in JS, objects can contain multiple nname/value pairs.
+    -->
+
+    <!--JSON Arrays:
+        "employees":[
+        {"firstName":"John","lastName":"Doe"},
+        {"firstName":"Anna","lastName":"Smith"},
+        {"firstName":"Peter","lastName":"Jones"}
+        ]
+
+        NB: Just like in JS, an array can contain objects.
+    -->
+
+    <h2>Create Object from JSON String</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        // JavaScript string using JSON syntax:
+
+        let text = '{"employees":[' + '{"firstName":"John","lastName":"Doe"},' + 
+        '{"firstName":"Anna","lastName":"Smith"},' + '{"firstName":"Peter","lastName":"Jones"}]}';
+
+        // This converts the string into a JavaScript object.
+        
+        const obj = JSON.parse(text);
+
+        document.getElementById("demo").innerHTML = 
+        obj.employees[1].firstName + " " + 
+        obj.employees[1].lastName;
+    </script>
+
+</body>
+</html>

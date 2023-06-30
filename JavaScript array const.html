@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Const</h2>
+
+    <p>You can NOT reassign a constant array:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        try {
+            const cars = ["Saab", "Volvo", "BMW"];
+            cars = ["Toyota", "Volvo", "Audi"];
+        }
+        catch (err) {
+            document.getElementById("demo").innerHTML = err;
+        }
+    </script><br>
+
+    <p>Declaring a const array does NOT make the elements unchangeable:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        // Create an Array:
+        const cars = ["Saab", "Volvo", "BMW"];
+
+        // Change an element:
+        cars[0] = "Toyota";
+
+        // Add an element:
+        cars.push("Audi");
+
+        // Display the Array:
+        document.getElementById("demo1").innerHTML = cars;
+    </script>
+
+    <!--JavaScript const variables must be assigned a value when they are declared.
+        Using const without initializing the array is a syntax error.
+        { This will not work:
+            const cars;
+            cars = ["Saab", "Volvo", "BMW"];
+        }
+        Arrays declared with "var" can be initialized at any time. You can even use the array before it is declared.
+        { This will work:
+            cars = ["Saab", "Volvo", "BMW"];
+            var cars;
+        }
+    -->
+
+    <h2>Declaring an Array Using const</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        const cars1 = ["Saab", "Volvo", "BMW"];
+        // Here cars[0] is "Saab"
+        {
+            const cars1 = ["Toyota", "Volvo", "BMW"];
+            // Here cars[0] is "Toyota"
+        }
+        // Here cars[0] is "Saab"
+        document.getElementById("demo2").innerHTML = cars1[0];
+    </script>
+
+    <!--An array declared with "var" does not have block scope.-->
+
+    <p id="demo3"></p>
+
+    <script>
+        var Cars = ["Saab", "Volvo", "BMW"];
+        // Here Cars[0] is "Saab"
+        {
+            var Cars = ["Toyota", "Volvo", "BMW"];
+            // Here Cars[0] is "Toyota"
+        }
+        // Here Cars[0] is "Toyota"
+        document.getElementById("demo3").innerHTML = Cars[0];
+    </script>
+
+    <!--Redeclaring or reassigning an existing "const" array, in the same scope, or in the same block, is not allowed.
+    For example:
+        const cars = ["Saab", "Volvo", "BMW"];  Allowed
+        const cars = ["Saab", "Volvo", "BMW"];  Not allowed
+        var cars = ["Saab", "Volvo", "BMW"];    Not allowed
+        cars = ["Saab", "Volvo", "BMW"];        Not allowed
+
+        {
+            const cars = ["Saab", "Volvo", "BMW"];  Allowed
+            const cars = ["Saab", "Volvo", "BMW"];  Not allowed
+            var cars = ["Saab", "Volvo", "BMW"];    Not allowed
+            cars = ["Saab", "Volvo", "BMW"];        Not allowed
+        }
+    Redeclaring an array with "const", in another scope, or in another block, is allowed.
+    For example:
+        const cars = ["Saab", "Volvo", "BMW"];  Allowed
+        {
+            const cars = ["Saab", "Volvo", "BMW"];  Allowed
+        }
+    -->
+
+</body>
+</html>

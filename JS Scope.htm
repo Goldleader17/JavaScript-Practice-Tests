@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--Variables declared within a JavaScript function, become LOCAL to the function-->
+
+<!--Local Scope-->
+
+    <h2>JavaScript Scope</h2>
+    
+    <p><b>carName</b> is undefined outside myFunction():</p>
+
+    <p id="demo"></p>
+    <p id="demo1"></p>
+
+    <script>
+        myFunction ();
+
+        function myFunction() {
+            let carName = "Hotrod";
+            document.getElementById("demo").innerHTML = typeof carName + " " + carName;
+        }
+
+        document.getElementById("demo1").innerHTML = typeof carName;
+    </script><br>
+
+    <!--Local variables have Function Scope:
+        They can only be accessed from within the function.
+    -->
+
+<!--Global Scope-->
+
+    <h2>JavaScript Global Variables</h2>
+    <p>A Global variable can be accessed from any script or function.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        let carName = "Tesla";
+        myFunction1();
+
+        function myFunction1() {
+            document.getElementById("demo2").innerHTML = "I can display " + carName;
+        }
+    </script><br>
+
+    <!--A global variable has Global Scope:
+        All scripts and functions on a webpage can access it.
+    -->
+
+    <!--Scope determines the accessibility of variables, objects, and functions from different parts of the code.-->
+
+<!--Automatically Global-->
+
+    <p>If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        myFunction2();
+        // code here can use carName as a global variable
+        document.getElementById("demo3").innerHTML = "I can display " + carName;
+
+        function myFunction2() {
+            carName = "Hotrod";
+        }
+    </script><br>
+
+    <!--In "Strict Mode", undeclared variables are not automatically global.-->
+
+    <p>In HTML, global variables defined with <b>var</b>, will become window variables.</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        var carName1 = "Hotrod";
+
+        // code here can use window.carName1
+        document.getElementById("demo4").innerHTML = "I can display " + window.carName1;
+    </script><br>
+
+    <p>In HTML, global variables defined with <b>let</b>, will not become window variables.</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        let carName2 = "Hotrod";
+
+        // code here can not use window.carName1
+        document.getElementById("demo5").innerHTML = "I can not display " + window.carName2;
+    </script>
+
+    <!--WARNING !!
+        Do not create global variable unless you intend to.
+        Your global variables (or functions) can overwrite window variables (or functions).
+        Any function, including the window object, can overwrite your global variables and functions.
+    -->
+
+    <!--The lifetime of a JavaScript variable starts when it is declared.
+        Function (local) variables are deleted when the function is completed.
+        In a web browser, global variables are deleted when you close the browser window (or tab).
+    -->
+
+    <!--Function arguments (parameters) work as local variables inside functions.-->
+
+</body>
+</html>

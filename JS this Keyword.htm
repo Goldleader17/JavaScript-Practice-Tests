@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--this in a Method-->
+
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+    <p>In this example, <b>this</b> refers to the <b>person</b> object.</p>
+    <p>Because <b>fullName</b> is a method of the person object.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Create an object:
+        const person = {
+            firstName: "Gabriel",
+            lastName: "Ezerioha",
+            id: 5566,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+        document.getElementById("demo").innerHTML = person.fullName();
+    </script>
+
+    <!--NB: "this" is not a variable. It is a keyword. You cannot change the value of "this".-->
+
+<!--this Alone-->
+
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+    <p>In this example, <b>this</b> refers to the window object:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        let x = this;
+        document.getElementById("demo1").innerHTML = x;
+    </script><br>
+
+    <!--When used alone, "this" refers to the global object. Because "this" is running in the global scope.
+        In a browser window the global object is [object Window].
+        In strict mode, when used alone, "this" also refers to the global object.
+        In a function, "this" refers to the global object.
+        In a function, in strict mode, "this" is "undefined".
+        In an event, "this" refers to the element that received the event.
+        Methods like call(), apply() and bind() can refer "this" to any object.
+    -->
+
+    <button onclick="this.style.display='none'">Click to Remove Me!</button><br>
+
+    <p>In this example <strong>this</strong> refers to person3, even if it is a method of person2:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        const person2 = {
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        const person3 = {
+            firstName: "John",
+            lastName: "Doe",
+        }
+        let y = person2.fullName.call(person3);
+        document.getElementById("demo2").innerHTML = y;
+    </script>
+
+<!--Function Borrowing-->
+
+    <h2>JavaScript Function bind()</h2>
+
+    <p>This example creates 2 objects (person and member).</p>
+    <p>The member object borrows the fullname method from person:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        const Person = {
+            firstName: "Gabriel",
+            lastName: "Ezerioha",
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        const member = {
+            firstName: "John",
+            lastName: "Doe",
+        }
+        let fullName = Person.fullName.bind(member);
+        document.getElementById("demo3").innerHTML = fullName();
+    </script>
+
+    <!--This Precedence 
+        Precedence     Object
+        1              bind()
+        2              apply() and call()
+        3              Object method
+        4              Global scope
+    -->
+
+</body>
+</html>

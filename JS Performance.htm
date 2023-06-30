@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--How to speed up your JavaScript code:
+
+        1. Reduce activity in loops. Statements that can be placed outside the loop will make the loop run faster.
+
+        2. Reduce DOM access.
+
+        3. Reduce DOM size.
+
+        4. Avoid unnecessary variables.
+
+        5. Avoid using "with" keyword.
+
+        6. Delay Javascript loading. place scripts at the bottom of the page body.
+
+        The HTTP specification defines that browsers should not download more than two components in parallel.
+        An alternative is to use 'defer="true"' in the script tag. The defer attribute specifies that the script should be executed after the page has finished parsing, but it only works for external scripts.
+        If possible, you can add your script to the page by code, after the page has loaded.
+
+    -->
+
+    <h2>JavaScript Performance</h2>
+
+    <p>If you expect to access a DOM element several times, access it once, and the use it as a local variable:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const obj = 
+        document.getElementById("demo");
+        obj.innerHTML = "Hello";
+    </script>
+
+</body>
+</html>

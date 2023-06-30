@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--Syntax:
+        class ClassName {
+            constructor() { ... }
+        }
+
+        Example:
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+        }
+        NB: JavaScript class is not an object. It is a template for objects.
+    -->
+    <h2>JavaScript Classes</h2>
+    <p>Creating two car objects from a car class:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        class Car {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+        }
+
+        const myCar = new Car("Hotrod", 2014);
+        const myCar1 = new Car("Mustang", 2019);
+
+        document.getElementById("demo").innerHTML = myCar.name + " " + myCar1.name;
+    </script><br>
+
+    <!--NB: The constructor method is called automatically when a new object is created.
+        It is used to initialize object properties.
+        If you do not define a constructor method, JavaScript will add an empty constructor method.
+    -->
+
+    <!--CLASS METHODS-->
+
+    <h2>JavaScript Class Methods</h2>
+    <p>How to define and use a class method.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        class Car1 {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            // Methods
+            age() {
+                const date = new Date();
+                return date.getFullYear() - this.year;
+            }
+        }
+
+        const myCar2 = new Car1("Tesla", 2020);
+
+        document.getElementById("demo1").innerHTML = "My car is " + myCar2.age() + " years old.";
+    </script><br>
+
+    <p>Pass a parameter into the "age()" method.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        class Car2 {
+            constructor(name, year) {
+                this.name = name;
+                this.year = year;
+            }
+            // Methods
+            age(x) {
+                return x - this.year;
+            }
+        }
+
+        const date = new Date();
+        let year = date.getFullYear();
+
+        const myCar3 = new Car2("BMW", 2018);
+        document.getElementById("demo2").innerHTML = "My car is " + myCar3.age(year) + " years old.";
+    </script><br>
+
+</body>
+</html>

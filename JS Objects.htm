@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Objects</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        // Create an object:
+        const car = {type:"Fiat", model:"500", color:"white"};
+
+        // Display some data from the object:
+        document.getElementById("demo").innerHTML = "The car type is " + car.type;
+    </script><br>
+
+    <!--The values are written as name:value pairs
+        It's common practice to declare objects with the const keyword.
+    -->
+
+<!--Object Definition: You define a JS object with an object literal-->
+
+    <h2>JavaScript Objects</h2>
+
+    <p id="demo1"></p>
+
+    <script>
+        // Create an object:
+        const person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        // Display some data from the object:
+        document.getElementById("demo1").innerHTML = person["firstName"] + " is " + person.age + " years old.";
+    </script><br>
+
+    <!--The "name:value" pairs in JavaScript objects are called "properties"
+        You can access object properties in two ways:
+        objectName.propertyName
+        or
+        objectName.["propertyName"]
+    -->
+
+    <!--JavaScript objects are containers for "named values" called properties.-->
+
+<!--Object Methods: Methods are actions that can be performed on objects-->
+
+    <h2>JavaScript Objects</h2>
+
+    <p>An object is a function definition stored as a property value.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        // Create an object:
+        const person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            }
+        };
+
+        // Display some data from the object:
+        document.getElementById("demo2").innerHTML = person1.fullName();
+    </script><br>
+
+    <!--A method is a function stored as a property.-->
+
+<!--Using Built-In Methods-->
+
+    <h2>JavaScript Objects</h2>
+    <p id="demo3"></p>
+
+    <script>
+        const person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            id: 5566,
+        };
+        person2.name = function() {
+            return (this.firstName + " " + this.lastName).toUpperCase();
+        };
+
+        document.getElementById("demo3").innerHTML = "My Father is " + person2.name();
+    </script><br>
+
+    <h2>JavaScript Objects</h2>
+    <p>JavaScript objects are mutable.</p>
+    <p>Any changes to a copy of an object will also change the original object:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        const person3 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        const x = person3;
+        x.age = 10;
+
+        document.getElementById("demo4").innerHTML = person3["firstName"] + " is " + person3.age + " years old.";
+    </script><br>
+
+<!--Object Properties-->
+
+    <h2>JavaScript Object Properties</h2>
+    <p>Add a new property to an existing object:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        const person4 = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 50,
+            eyeColor: "blue"
+        };
+
+        person3.nationality = "English";
+        
+        document.getElementById("demo5").innerHTML = person4["firstName"] + " is " + person4.nationality + ".";
+    </script><br>
+
+<!--Nested Objects: Values in an object can be another object.-->
+
+    <h2>JavaScript Objects</h2>
+    <p>Access nested objects:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        const myObj = {
+            name: "Gabriel",
+            age: 18,
+            cars: {
+                cars1: "Tesla",
+                cars2: "BMW",
+                cars3: "Ford"
+            }
+        }
+
+        document.getElementById("demo6").innerHTML = myObj.cars.cars1;
+    </script><br>
+
+<!--Nested Arrays and Objects: Values in objects can be arrays, and values in arrays can be objects:-->
+
+    <h2>JavaScript Arrays</h2>
+    <h3>Nested JavaScript Objects and Arrays.</h3>
+
+    <p id="demo7"></p>
+
+    <script>
+        let y = "";
+        const myObj1 = {
+            name: "Gabriel",
+            age: 18,
+            cars: [
+                {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+                {name:"BMW", models:["320", "X3", "X5"]},
+                {name:"Fiat", models:["500", "Panda"]}
+            ]
+        }
+
+        for (let i in myObj1.cars) {
+            y += "<h2>" + myObj1.cars[i].name + "</h2>";
+            for (let j in myObj1.cars[i].models) {
+                y += myObj1.cars[i].models[j] + "<br>";
+            }
+        }
+
+        document.getElementById("demo7").innerHTML = y;
+    </script><br>
+
+<!--Displaying Objects in a Loop-->
+
+    <h2>JavaScript Objects</h2>
+    <p>Display object properties:</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        const person5 = {
+            Name: "John",
+            age: 50,
+            city: "New York"
+        };
+
+        let txt = "";
+        for (let x in person5) {
+            txt += person5[x] + " ";
+        };
+        
+        document.getElementById("demo8").innerHTML = txt;
+    </script><br>
+
+    <!--You must use person[x] in the loop. person.x will not work (because x is a variable).-->
+
+<!--Using Object.values(): Any JS object can be converted to an array using Object.values()-->
+
+    <h2>JavaScript Objects</h2>
+    <p>Object.values() converts an object to an array.</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        const person6 = {
+            Name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        document.getElementById("demo9").innerHTML = Object.values(person6);
+    </script><br>
+
+<!--Using JSON.stringify(): Any JS object can be stringified (converted to a string) with the JS function 
+    JSON.stringify()
+-->
+
+    <h2>JavaScript Objects</h2>
+    <p>Display properties in JSON format:</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        const person7 = {
+            Name: "John",
+            age: 30,
+            city: "New York"
+        };
+
+        document.getElementById("demo10").innerHTML = JSON.stringify(person7);
+    </script><br>
+
+    <!--JSON.stringify will stringify dates but will not stringify functions. 
+        You have to convert the functions to strings first.
+    -->
+
+    <h2>JavaScript Display Objects</h2>
+    <p>JSON.stringify will not stringify functions.</p>
+    <p>You have to convert the functions to strings first.</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        const person8 = {
+            Name: "John",
+            age: function () {return 30;}
+        };
+        person8.age = person8.age.toString();
+
+        document.getElementById("demo11").innerHTML = JSON.stringify(person8);
+    </script><br>
+
+    <h2>JavaScript Arrays</h2>
+    <p>JSON.stringify can stringify arrays:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        const arr = ["John", "Peter", "Sally", "Jane"];
+        document.getElementById("demo12").innerHTML = JSON.stringify(arr);
+    </script><br>
+
+<!--JavaScript Object Accessors-->
+
+    <!--JS Getter (The get Keyword)-->
+
+    <h2>JavaScript Getters and Setters</h2>
+
+    <p>Getters and setters allow you to get and set object properties via methods.</p>
+    <p>This example uses a lang property to get the value of the language property:</p>
+
+    <p id="demo13"></p>
+
+    <script>
+        const Person = {
+            firstName: "John",
+            lastName: "Doe",
+            language: "en",
+            get lang() {return this.language.toUpperCase();}
+        };
+
+        // Display data from the object using a getter:
+        document.getElementById("demo13").innerHTML = Person.lang;
+    </script><br>
+
+    <!--JS Setter (The set Keyword)-->
+
+    <p>This example uses a lang property to set the value of the language property:</p>
+
+    <p id="demo14"></p>
+
+    <script>
+        const Person1 = {
+            firstName: "John",
+            lastName: "Doe",
+            language: "en",
+            set lang(lang) {this.language = lang.toUpperCase();}
+        };
+
+        // Set a property using set:
+        Person1.lang = "en";
+
+        // Display data from the object:
+        document.getElementById("demo14").innerHTML = Person1.language;
+    </script><br>
+
+    <h2>JavaScript Object Methods</h2>
+
+    <p>Object data can be accessed using a getter.</p>
+
+    <p id="demo15"></p>
+
+    <script>
+        // Create an object:
+        const Person2 = {
+            firstName: "John",
+            lastName: "Doe",
+            get fullName() {
+                return this.firstName + " " + this.lastName;
+            }
+        }
+        // Display data from the object using a getter:
+        document.getElementById("demo15").innerHTML = Person2.fullName;
+    </script><br>
+
+</body>
+</html>

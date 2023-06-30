@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--THE INDEXOF() METHOD-->
+
+    <h1>JavaScript Strings</h1>
+    <h2>The indexOf() Method</h2>
+
+    <p>The indexOf() method returns the position of the first occurence of a string in a string.</p>
+    <p>The position of the first occurence of "locate" is:</p>
+    <p id="demo"></p>
+
+    <script>
+        let text = "Please locate where 'locate' occurs!";
+        let index = text.indexOf("locate");
+        document.getElementById("demo").innerHTML = index;
+    </script>
+
+    <!--Both indexOf() and lastindexOf() return -1 if the text is not found.-->
+    <!--The two methods, indexOf() and search() are equal, save for some differences;
+    * The search() method cannot take a second start position argument.
+    * The indexOf() method cannot take powerful search values (regular expressions).-->
+
+<!--THE MATCH() METHOD-->
+
+    <h2>The match() Method</h2>
+    <p>Perform a global search for "ain":</p>
+    
+    <p id="demo1"></p>
+
+    <script>
+        let text1 = "The rain in SPAIN stays mainly in the plain";
+        const myArr = text1.match(/ain/g);
+        document.getElementById("demo1").innerHTML = myArr.length + " " + myArr;
+    </script>
+
+    <p>Perform a global, case-insensitive search for "ain":</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        let text2 = "The rain in SPAIN stays mainly in the plain";
+        const myArr1 = text1.match(/ain/gi);
+        document.getElementById("demo2").innerHTML = myArr1.length + " " + myArr1;
+    </script>
+
+    <!--If a regular expression does not include the g modifier (global search), match() will return only the first match in the string.-->
+
+<!--THE MATCHALL() METHOD-->
+
+    <h2>The matchAll() Method</h2>
+    <p>ES2020 introduced the string method matchAll().</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        let text3 = "I love cats. Cats are very easy to love. Cats are very popular."
+        const iterator = text3.matchAll(/Cats/gi);
+
+        document.getElementById("demo3").innerHTML = Array.from(iterator);
+    </script>
+
+    <!--matchAll() doesn't work in Internet Explorer.-->
+
+<!--THE INCLUDES() METHOD-->
+
+    <h2>The includes() Method</h2>
+    <p>Check if a string includes "world":</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        let text4 = "Hello world, welcome to the universe.";
+        document.getElementById("demo4").innerHTML = text4.includes("world");
+    </script>
+
+    <!--includes() is case sensitive.-->
+
+    <h2>The startsWith() Method</h2>
+    <p>Check if a string starts with "world":</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        let text5 = "Hello world, welcome to the universe.";
+        document.getElementById("demo5").innerHTML = text5.startsWith("world");
+    </script>
+
+</body>
+</html>

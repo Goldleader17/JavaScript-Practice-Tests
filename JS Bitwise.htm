@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <h2>JavaScript Bitwise AND</h2>
+    <h3>The & Operator</h3>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 5 & 1;
+    </script>
+
+    <h2>JavaScript Bitwise OR</h2>
+
+    <h3>The | Operator</h3>
+
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML = 5 | 1;
+    </script>
+
+    <h2>JavaScript Bitwise XOR</h2>
+
+    <h3>The ^ Operator</h3>
+
+    <p id="demo2"></p>
+
+    <script>
+        document.getElementById("demo2").innerHTML = 5 ^ 1;
+    </script>
+
+    <h2>JavaScript Bitwise NOT</h2>
+
+    <h3>The ~ Operator</h3>
+
+    <p id="demo3"></p>
+
+    <script>
+        document.getElementById("demo3").innerHTML = ~5;
+    </script>
+
+    <h2>JavaScript Bitwise Left</h2>
+    <h3>The << Operator</h3>
+
+    <p id="demo4"></p>
+
+    <script>
+        document.getElementById("demo4").innerHTML = 5 << 1;
+    </script>
+
+    <h2>JavaScript Signed Bitwise Right</h2>
+
+    <h3>The >> Operator</h3>
+
+    <p id="demo5"></p>
+
+    <script>
+        document.getElementById("demo5").innerHTML = -5 >> 1;
+    </script>
+
+    <h2>JavaScript Unsigned Bitwise Right</h2>
+
+    <h3>The >>> Operator</h3>
+
+    <p id="demo6"></p>
+
+    <script>
+        document.getElementById("demo6").innerHTML = 5 >>> 1;
+    </script>
+
+    <h2>JavaScript Convert Decimal to Binary</h2>
+
+    <p id="demo7"></p>
+
+    <script>
+        document.getElementById("demo7").innerHTML = dec2bin(-5);
+        function dec2bin(dec){
+            return (dec >>> 0).toString(2);
+        }
+    </script>
+
+    <h2>JavaScript Convert Binary to Decimal</h2>
+
+    <p id="demo8"></p>
+
+    <script>
+        document.getElementById("demo8").innerHTML = bin2dec(101);
+        function bin2dec(bin){
+            return parseInt(bin, 2).toString(10);
+        }
+    </script>
+
+</body>
+</html>

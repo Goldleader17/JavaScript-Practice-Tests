@@ -1,7 +1,7 @@
-function Hello()
+/*function Hello()
 {
  alert("Hello, World");
-}
+}*/
 
 // How to create variables:
 var x;

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript Booleans</h1>
+    <p>Display the value of 10 > 9:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 10 > 9;
+    </script>
+
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML = 
+        "100 is " + Boolean(100) + "<br>" + 
+        "3.14 is " + Boolean(3.14) + "<br>" + 
+        "-15 is "+ Boolean(-15) + "<br>" + 
+        "Any (not empty) string is " + Boolean("Hello") + "<br>" + 
+        "Een the string 'false' is " + Boolean('false') + "<br>" + 
+        "Any expression (except zero) is " + Boolean(1 + 7 + 3.14);
+    </script>
+
+    <!--Everything without a value is false, even the boolean value of false is false.
+        The new keyword defines booleans as objects.
+        Booleans and boolean objects cannot be safely compared.
+    -->
+</body>
+</html>

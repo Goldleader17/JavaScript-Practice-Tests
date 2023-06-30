@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--The purpose of "use strict" is to indicate that the code should be executed in 'strict mode'.
+        With strict mode, you can not, for example, use undeclared variables.
+        It should be declared at the beginning of a script, so it'll have global scope.
+    -->
+
+    <!--You can use strict mode in all your programs. It helps you to write cleaner code, like preventing you from using undeclared variables. "use strict" is just a string, so your browser will not throw an error even if it does not understand it.-->
+
+    <h2>With "use strict":</h2>
+    <h3>Using a variable without declaring it, is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        x = 3.14;  // This will cause an error (x is not defined).
+    </script><br>
+
+    <h2>Global "use strict" declaration</h2>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        myFunction();
+
+        function myFunction() {
+            y = 3.14;  // This will cause an error (y is not defined).
+        }
+    </script><br>
+
+    <p>"use strict" in a function will only cause errors in that function.</p>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        x = 3.14;  // This will not cause an error.
+        myFunction1();
+
+        function myFunction1() {
+            y = 3.14;  // This will cause an error (y is not defined).
+        }
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Deleting a variable (or object) is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        let x = 3.14;
+        delete (x);    // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Deleting a function is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        function x(p1, p2) {};
+        delete (x);    // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Duplicating a parameter name is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        function x(p1, p1) {};    // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Octal numeric literals are not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        let a = 010;    // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Octal escape characters are not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        let b = "\010";    // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Writing to a read-only property is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        const obj = {};
+        Object.defineProperties(obj, "x", {value:0, writable:false});
+        
+        obj.x = 3.14;      // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Writing to a get-only property is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        const obj = {get x() {return 0} };
+
+        obj.x = 3.14;      // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>Deleting an undeletable property is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        delete Object.prototype;     // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>The word "eval" cannot be used as a variable.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        eval1 = 3.14;      // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>The with statement is not allowed.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        with1 (Math) ;{x = cos(2)};    // This will cause an error.
+    </script><br>
+
+    <h2>With "use strict":</h2>
+    <h3>For security reasons, eval() is not allowed to create variables in the scope from which it was called.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        eval ("x = 2");
+        alert1 (x);      // This will cause an error.
+    </script><br>
+
+    <!--In strict mode, eval() can not declare a variable using the var or let keyword.-->
+
+    <h2>With "use strict":</h2>
+    <h3>Inside functions, the "this" keyword is no longer the global object if not specified:</h3>
+
+    <script>
+        "use strict";
+        function myFunction2() {
+            alert(this);
+        }
+        myFunction2();
+    </script><br>
+
+    <h3>Future reserved keywords are not allowed in strict mode.</h3>
+
+    <p>Activate debugging in your browser (F12) to see the error report.</p>
+
+    <script>
+        "use strict";
+        let public = 1500;    // This will cause an error.
+    </script><br>
+
+    <!--Watch Out!
+        The "use strict" directive is only recognized at the beginning of a script or a function.
+    -->
+    
+</body>
+</html>

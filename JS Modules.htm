@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--JavaScript modules allow you to break up your code into seperate files.
+        This makes it easier to maintain a code-base.
+        Modules are imported from external files with the "import" statement.
+        Modules also rely on 'type="module"' in the <script> tag.
+    -->
+
+<!--Export-->
+
+    <h2>JavaScript Modules</h2>
+
+    <p id="demo"></p>
+
+    <script type="module">
+        import  message from "./message.js";
+
+        document.getElementById("demo").innerHTML = message();
+
+    </script><br>
+
+<!--Import-->
+
+    <!--From named exports-->
+
+    <p id="demo1"></p>
+
+    <script type="module">
+        import { name, age } from "./person.js";
+
+        let text = "My name is " + name + ", I am " + age + ".";
+
+        document.getElementById("demo1").innerHTML = text;
+    </script><br>
+
+    <!--From default exports-->
+
+    <p id="demo2"></p>
+
+    <script type="module">
+        import  message from "./message.js";
+
+        document.getElementById("demo2").innerHTML = message();
+
+    </script>
+
+    <!--NB: Modules only work with the HTTP(s) protocol.
+        A web-page opened via the file:// protocol cannot use import/export.
+    -->
+
+</body>
+</html>

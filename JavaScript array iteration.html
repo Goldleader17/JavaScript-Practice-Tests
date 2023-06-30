@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--The forEach() Method-->
+
+    <h1>JavaScript Arrays</h1>
+    <h2>The forEach() Method</h2>
+
+    <p>Call a function once for each array element:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+
+        let txt = "";
+        numbers.forEach(myFunction);
+        document.getElementById("demo").innerHTML = txt;
+
+        function myFunction(value, index, array)
+        {
+            txt += value + "<br>";
+        }
+    </script>
+
+<!--The map() Method-->
+
+    <h2>The map() Method</h2>
+
+    <p>Create a new array by performing a function on each array element:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        const numbers1 = [45, 4, 9, 16, 25];
+        const numbers2 = numbers1.map(myFunction1);
+
+        document.getElementById("demo1").innerHTML = numbers2;
+
+        function myFunction1(value, index, array)
+        {
+            return value * 2;
+        }
+    </script>
+
+<!--The flatMap() Method-->
+
+    <h2>The flatMap() Method</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        const myArr = [1, 2, 3, 4, 5,6];
+        const newArr = myArr.flatMap((x) => x * 2);
+        document.getElementById("demo2").innerHTML = newArr;
+    </script>
+
+<!--The filter() Method-->
+
+    <h2>The filter() Method</h2>
+
+    <p>Create a new array from all array elements that pass a test:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        const Numbers = [45, 4, 9, 16, 25];
+        const over18 = Numbers.filter(myFunction2);
+        document.getElementById("demo3").innerHTML = over18;
+
+        function myFunction2(value, index, array)
+        {
+            return value > 18;
+        }
+    </script>
+
+<!--The reduce() Method-->
+
+    <h2>The reduce() Method</h2>
+
+    <p>Find the sum of all numbers in an array:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        const Numbers1 = [45, 4, 9, 16, 25];
+        let sum = Numbers1.reduce(myFunction3, 100);
+
+        document.getElementById("demo4").innerHTML = "The sum is " + sum;
+
+        function myFunction3(total, value, index, array)
+        {
+            return total + value;
+        }
+    </script>
+    <!--NB: The reduce() method does not reduce the original array.-->
+
+<!--The every() Method-->
+
+    <h2>The every() Method</h2>
+    <p>The every() method checks if all array values pass a test.</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        const Numbers2 = [45, 4, 9, 16, 25];
+        let allOver18 = Numbers2.every(myFunction4);
+
+        document.getElementById("demo5").innerHTML = "All over 18 is " + allOver18;
+
+        function myFunction4(value, index, array)
+        {
+            return value > 18;
+        }
+    </script>
+
+<!--The some() Method-->
+
+    <h2>The some() Method</h2>
+    <p>The some() method checks if some array values pass a test:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        const Numbers3 = [45, 4, 9, 16, 25];
+        let someOver18 = Numbers3.some(myFunction5);
+
+        document.getElementById("demo6").innerHTML = "Some over 18 is " + someOver18;
+
+        function myFunction5(value, index, array)
+       {
+            return value > 18;
+       }
+    </script>
+
+<!--The keys() Method-->
+
+    <h2>The keys() Method</h2>
+
+    <p>Return an Array Iterator object with the keys of the array:</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
+        const keys = fruits2.keys();
+
+        let text = "";
+        for (let x of keys) {
+            text += x + "<br>";
+        }
+
+        document.getElementById("demo7").innerHTML = text;
+    </script>
+
+    <p>Array.keys() is not supported in Internet Explorer.</p>
+
+    <!--Other array methods are:
+        * The indexOf() method; which searches an array for an element value and returns its position.
+            syntax: array.indexOf(item, start)
+
+        * The lastindexOf() method; same as indexOf(), but it returns the position of the last occutence of the specified element.
+            syntax: array.lastIndexOf(item, start)
+
+        * The find() method; which returns the value of the first array element that passes a test function.
+
+        * The findIndex() method; returns the index of the first array element that passes a test function.
+
+        * The from() method; returns an Array object from any object with a length property or any iterable object.
+
+        * The entries() method; returns an Array iterator object with key/value pairs.
+
+        * The includes() method; allows us to check if an element is present in an array (including NaN, unlike indexOf).
+        
+        * The spread() operator; spreads elements of iterable objects.
+    -->
+    <!--NB: The spread, includes, entries, keys, from, findIndex, and find() methods are not supported in Internet Explorer.
+    -->
+    
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--JavaScript Object Constructors-->
+
+    <h2>JavaScript Object Constructors</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        // Create a Person object
+        const myFather = new Person("John", "Doe", 50, "blue");
+
+        // Display age
+        document.getElementById("demo").innerHTML = "My father is " + myFather.age + " years old.";
+    </script><br>
+
+    <!--NB: It is good practice to name constructor functions with an upper-case letter.
+        In a constructor function "this" does not have a value. It is a substitute for the new object.
+        The value of "this" will become the new object when a new object is created.
+    -->
+
+<!--Object Types (Blueprints) (Classes)-->
+
+    <p id="demo1"></p>
+
+    <script>
+
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        // Create two Person objects
+        const myFather1 = new Person("John", "Doe", 50, "blue");
+        const myMother = new Person("Sally", "Doe", "47", "green");
+
+        // Display age
+        document.getElementById("demo1").innerHTML = "My father is " + myFather1.age + ". My mother is " + myMother.age + ".";
+    </script><br>
+
+<!--Adding a Property to an Object-->
+
+    <p id="demo2"></p>
+
+    <script>
+
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        // Create two Person objects
+        const myFather2 = new Person("John", "Doe", 50, "blue");
+        const myMother1 = new Person("Sally", "Doe", "47", "green");
+
+        // Add nationality to first object
+        myFather2.nationality = "English";
+
+        // Display nationality
+        document.getElementById("demo2").innerHTML = "My father is " + myFather2.nationality;
+    </script><br>
+    
+<!--Adding a Method to an Object-->
+
+    <p id="demo3"></p>
+
+    <script>
+
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        // Create two Person objects
+        const myFather3 = new Person("John", "Doe", 50, "blue");
+        const myMother2 = new Person("Sally", "Doe", "47", "green");
+
+        // Add a name method to first object
+        myFather3.name = function(){
+            return this.firstName + " " + this.lastName;
+        };
+
+        // Display full name
+        document.getElementById("demo3").innerHTML = "My father is " + myFather3.name();
+    </script><br>
+
+    <!--NB: You cannot add a new property to a constructor function.
+        To add a new property to a constructor, you must add it to the construtor function.
+        This way object properties can have default values.
+    -->
+
+<!--Adding a Method to a Constructor-->
+
+    <p id="demo4"></p>
+
+    <script>
+
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.name = function() {
+                return this.firstName + " " + this.lastName;
+            };
+        }
+
+        // Create a Person object
+        const myFather4 = new Person("John", "Doe", 50, "blue");
+
+        // Display age
+        document.getElementById("demo4").innerHTML = "My father is " + myFather4.name();
+    </script><br>
+
+    <p id="demo5"></p>
+
+    <script>
+
+        // Constructor function for Person objects
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+            this.changeName = function(name) {
+                return this.lastName = name;
+            };
+        }
+
+        // Create a Person object
+        const myMother3 = new Person("Sally", "Doe", "47", "green");
+
+        // Change last name
+        myMother3.changeName("Sally");
+
+        // Display full name
+        document.getElementById("demo5").innerHTML = "My mother's last name is " + myMother3.lastName;
+    </script><br>
+
+    <!--"Math" is a global object. The "new" keyword cannot be used on "Math".-->
+
+<!--JavaScript Object Prototypes-->
+
+    <!--The "prototype" Property: Allows us to add new properties to object constructors.-->
+
+    <h2>JavaScript Object</h2>
+
+    <p>The prototype Property allows us to add new properties to object constructors:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        Person.prototype.nationality = "English";
+
+        const myFather5 = new Person("John", "Doe", 50, "blue");
+        document.getElementById("demo6").innerHTML = "The nationality of my father is " + myFather5.nationality;
+    </script><br>
+
+    <p>The prototype Property also allows us to add new methods to object constructors:</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+
+        Person.prototype.name = function() {
+            return this.firstName + " " + this.lastName
+        };
+
+        const myFather6 = new Person("John", "Doe", 50, "blue");
+        document.getElementById("demo7").innerHTML = "My father is " + myFather6.name();
+    </script><br>
+
+    <!--NB: Only modify your own prototypes. Never modify the prototypes of standard JavaScript objects.-->
+
+<!--JavaScript Iterables-->
+
+    <h2>JavaScript Iterables</h2>
+    <p>Home Made Iterables:</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        // Home Made Iterable
+        function myNumbers() {
+            let n = 0;
+            return {
+                next: function() {
+                    n += 10;
+                    return {value:n, done:false};
+                }
+            };
+        }
+
+        // Create Iterable
+        const n = myNumbers();
+        n.next(); // 10
+        n.next(); // 20
+        n.next(); // 30
+
+        document.getElementById("demo8").innerHTML = n.next().value;
+    </script><br>
+
+    <!--The problem with a home made iterable: It does not support the JS "for..of" statement.-->
+
+    <h2>JavaScript Iterables</h2>
+
+    <p id="demo9"></p>
+
+    <script>
+        // Create an Object
+        myNumbers = {};
+
+        // Make it Iterable
+        myNumbers[Symbol.iterator] = function()
+        {
+            let n = 0;
+            done = false;
+            return {
+                next() {
+                    n += 10;
+                    if (n == 100) {done = true}
+                    return {value:n, done:done};
+                }
+            };
+        }
+
+        let text = ""
+        for (const num of myNumbers) {
+            text += num +"<br>"
+        }
+
+        document.getElementById("demo9").innerHTML = text;
+    </script><br>
+
+</body>
+</html>

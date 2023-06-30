@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--Essential Map Methods-->
+
+    <!--The new Map() Method-->
+
+    <h2>JavaScript Map Objects</h2>
+    <p>Creating a Map from an Array:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Create a Map
+        const fruits = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+        document.getElementById("demo").innerHTML = fruits.get("apples");
+    </script>
+
+    <!--The set() & get() Method-->
+
+    <p>Using Map.set():</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        // Create a Map
+        const fruits1 = new Map();
+
+        // Set Map Values
+        fruits1.set("apples", 500);
+        fruits1.set("bananas", 300);
+        fruits1.set("oranges", 200);
+        document.getElementById("demo1").innerHTML = fruits1.get("apples");
+    </script>
+
+    <p>Using Map.set():</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        // Create a Map
+        const fruits2 = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+        fruits2.set("apples", 200);
+
+        document.getElementById("demo2").innerHTML = fruits2.get("apples");
+    </script>
+
+    <!--Other properties include: The size property, which returns the number of elements in a Map.
+        The delete() method, which removes a Map element.
+        The has() method, which returns true if a key exists in a Map.
+    -->
+
+    <!--Using Map.forEach()-->
+
+    <p>Using Map.forEach():</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        // Create a Map
+        const fruits3 = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+
+        let text = "";
+        fruits3.forEach(function(value, key) {
+            text += key + ' = ' + value + "<br>"
+        });
+
+        document.getElementById("demo3").innerHTML = text;
+    </script>
+
+    <!--The entries() Method-->
+
+    <p>Using Map.entries():</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        // Create a Map
+        const fruits4 = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+
+        let text1 = "";
+        for (const x of fruits4.entries()) {
+            text1 += x + "<br>";
+        }
+
+        document.getElementById("demo4").innerHTML = text1;
+    </script>
+
+    <!--Maps are Objects-->
+
+<!--Objects as Keys-->
+
+    <h2>JavaScript Map Objects</h2>
+    <p>Being able to use objects as keys is an important Map feature:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        // Create Objects
+        const apples = {name: 'Apples'};
+        const bananas = {name: 'Bananas'};
+        const oranges = {name: 'Oranges'};
+
+        // Create a Map
+        const fruits5 = new Map();
+
+        // Add new Elements to the Map
+        fruits5.set(apples, 500);
+        fruits5.set("bananas", 300);
+        fruits5.set("oranges", 200);
+        document.getElementById("demo5").innerHTML = fruits5.get(apples);
+    </script>
+
+</body>
+</html>

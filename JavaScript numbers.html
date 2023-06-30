@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>JavaScript Numbers</h2>
+
+    <p>Numbers can be written with or without decimals:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let x = 3.14;
+        let y = 3;
+        document.getElementById("demo").innerHTML = x + "<br>" + y;
+    </script>
+
+    <p>Extra large or extra small numbers can be written with scientific (exponent) notation:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        let a = 123e5;
+        let b = 123e-5;
+        document.getElementById("demo1").innerHTML = a + "<br>" + b;
+    </script><br>
+
+<!--INTEGER PRECISION-->
+
+    <h2>Integer Precision</h2>
+
+    <p>Integers (numbers without a period or exponent notation) are accurate up to 15 digits:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        let x1 = 999999999999999;
+        let y1 = 9999999999999999;
+        document.getElementById("demo2").innerHTML = x1 + "<br>" + y1;
+    </script>
+
+<!--FLOATING PRECISION-->
+
+    <h2>Floating Point Precision</h2>
+
+    <p>Floating point arithmetic is not always 100% accurate.</p>
+
+    <!--The maximum number of decimals is 17.-->
+
+    <p id="demo3"></p>
+
+    <p>But it helps to multiply and divide:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        let X = 0.2 + 0.1;
+        document.getElementById("demo3").innerHTML = "0.2 + 0.1 = " + X;
+        let Y = (0.2*10 + 0.1*10) / 10;
+        document.getElementById("demo4").innerHTML = "0.2 + 0.1 = " + Y;
+    </script><br>
+
+    <!--WARNING !!
+        JavaScript uses the + operator for both addition and concatenation.Numbers are added. Strings are concatenated.
+    -->
+    <!--If you add two numbers, the result will be a number. If you add two strings, the result will be a string concatenation.-->
+
+    <!--If you add a number and a string or a string and a number, the result will be a string concatenation.-->
+
+<!--NUMERIC STRINGS-->
+
+    <p>JavaScript will try to convert strings to numbers when dividing:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        let A = "100";
+        let B = "10";
+        let Z = A / B;
+        document.getElementById("demo5").innerHTML = Z;
+    </script>
+
+    <p>JavaScript will try to convert strings to numbers when multiplying:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        let A1 = "100";
+        let B1 = "10";
+        let z = A * B;
+        document.getElementById("demo6").innerHTML = z;
+    </script>
+
+    <p>JavaScript will try to convert strings to numbers when subtracting:</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        let a1 = "100";
+        let b1 = "10";
+        let z1 = A - B;
+        document.getElementById("demo7").innerHTML = z1;
+    </script>
+
+    <p>JavaScript will NOT convert strings to numbers when adding:</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        let a2 = "100";
+        let b2 = "10";
+        let z2 = A + B;
+        document.getElementById("demo8").innerHTML = z2;
+    </script>
+
+    <!--In the last example JavaScript uses the + operator to concatenate the strings.-->
+    
+    <p>A number divided by a non-numeric string becomes NaN (Not a Number):</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        document.getElementById("demo9").innerHTML = 100 / "Apple";
+    </script>
+
+    <p>A number divided by a numeric string becomes a number:</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        document.getElementById("demo10").innerHTML = 100 / "10";
+    </script>
+
+<!--NaN - NOT A NUMBER-->
+
+    <p>You can use the global JavaScript function isNaN() to find out if a value is not a number:</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        let T = 100 / "Apple";
+        document.getElementById("demo11").innerHTML = isNaN(T);
+    </script>
+
+    <p>If you use NaN in a mathematical operation, the result will also be NaN:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        let p = NaN;
+        let q = 5;
+        document.getElementById("demo12").innerHTML = p + q;
+    </script>
+
+    <p>If you use NaN in a mathematical operation, the result can be a concatenation:</p>
+
+    <p id="demo13"></p>
+
+    <script>
+        let P = NaN;
+        let Q = "5";
+        document.getElementById("demo13").innerHTML = P + Q;
+    </script>
+
+    <p>The typeof NaN is number:</p>
+
+    <p id="demo14"></p>
+
+    <script>
+        let p1 = NaN;
+        document.getElementById("demo14").innerHTML = typeof p1;
+    </script><br>
+
+<!--INFINITY-->
+
+    <p>Infinity is returned if you calculate a number outside the largest possible number:</p>
+
+    <p id="demo15"></p>
+
+    <script>
+        let myNumber = 2;
+        let txt = "";
+        while (myNumber != Infinity) {
+            myNumber = myNumber * myNumber;
+            txt = txt + myNumber + "<br>";
+        }
+        document.getElementById("demo15").innerHTML = txt;
+    </script>
+
+    <p>Division by zero generates Infinity;</p>
+
+    <p id="demo16"></p>
+
+    <script>
+        let c = 2/0;
+        let d = -2/0;
+        document.getElementById("demo16").innerHTML = c + "<br>" + d;
+    </script>
+
+    <!--Infinity is a number: typeof Infinity returns number.-->
+
+<!--HEXADECIMAL-->
+
+    <p>Numeric constants, preceded by 0x, are interpreted as hexadecimal:</p>
+
+    <p id="demo17"></p>
+
+    <script>
+        let C = 0xFF;
+        document.getElementById("demo17").innerHTML = "0xFF = " + C;
+    </script>
+
+    <!--Never write a number with a leading zero (like 07). Some JavaScript versions interpret numbers as octal if they are written with a leading zero.-->
+
+    <p>The toString() method can output numbers from base 2 to 36:</p>
+
+    <p id="demo18"></p>
+
+    <script>
+        let myNumber1 = 32;
+        document.getElementById("demo18").innerHTML = "Decimal 32 = " + "<br><br>" +
+
+        "Hexatrigesimal (base 36): " + myNumber1.toString(36) + "<br>" + 
+        "Doutrigesimal (base 32): " + myNumber1.toString(32) + "<br>" + 
+        "Hexadecimal (base 16): " + myNumber1.toString(16) + "<br>" + 
+        "Duodecimal (base 12): " + myNumber1.toString(12) + "<br>" + 
+        "Octal (base 8): " + myNumber1.toString(8) + "<br>" + 
+        "Binary (base 2): " + myNumber1.toString(2);
+    </script>
+
+<!--BIGINT-->
+
+    <h2>Integer and BigInt</h2>
+
+    <p id="demo19"></p>
+
+    <script>
+        let F = 9999999999999999;
+        let G = BigInt("9999999999999999");
+        document.getElementById("demo19").innerHTML = F + "<br>" + G;
+    </script>
+
+    <h2>Create a BigInt</h2>
+
+    <p id="demo20"></p>
+
+    <script>
+        let f = 1234567890123456789123456789n;
+        document.getElementById("demo20").innerHTML = f;
+    </script>
+
+    <!--The JavaScript typeof a BigInt is "bigint"-->
+
+    <h2>BigInt Multiply</h2>
+
+    <p>Operators that can be used on a Number can be used on a BigInt.</p>
+    <p id="demo21"></p>
+
+    <script>
+        let g = 1234647876674898n;
+        let h = 2983743984783n;
+        let i = g * h;
+        document.getElementById("demo21").innerHTML = i;
+    </script>
+
+    <!--Arithmetic between a BigInt and a Number is not allowed (type conversion lose information).
+        Unsigned right shift (>>>) can not be done on a BigInt (it does not have a fixed width).
+    -->
+    
+    <h2>BigInt Divide</h2>
+
+    <p>A BigInt can not have decimals.</p>
+    <p>Cannot mix BigInt and other types, use explicit conversions.</p>
+    <p id="demo22"></p>
+
+    <script>
+        /*let j = 5n;
+        let k = x / 2;
+        Error: Cannot mix BigInt and other types, use explicit conversion.*/
+
+        let j = 5n;
+        let k = Number(j) / 2;
+
+        document.getElementById("demo22").innerHTML = k;
+    </script>
+
+    <h2>Hex, Octal and Binary</h2>
+
+    <p id="demo23"></p>
+
+    <script>
+        let hex = 0x200000000000003n;
+        let oct = 0o4000000000000000003n;
+        let bin = 0b1000000000000000000000000000000000000000000000000000n;
+
+        document.getElementById("demo23").innerHTML = hex + "<br>" + oct + "<br>" + bin;
+    </script>
+
+    <h2>Integer Precision</h2>
+
+    <p>Is 9007199254740992 equal to 9007199254740993?</p>
+
+    <p id="demo24"></p>
+
+    <script>
+        let l = 9007199254740992 === 9007199254740993;
+        document.getElementById("demo24").innerHTML = l;
+    </script>
+
+    <h2>Number Object Properties</h2>
+
+    <p>MAX_SAFE_INTEGER</p>
+
+    <p id="demo25"></p>
+
+    <script>
+        let m = Number.MAX_SAFE_INTEGER;
+        document.getElementById("demo25").innerHTML = m;
+    </script>
+
+    <h2>The isInteger() Method</h2>
+
+    <p>The isInteger() method returns true if the argument is an integer.</p>
+    <p>Otherwise is returns false.</p>
+
+    <p id="demo26"></p>
+
+    <script>
+        document.getElementById("demo26").innerHTML = Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
+    </script>
+
+    <h2>The isSafeInteger() Method</h2>
+
+    <p>The isSafeInteger() method returns true if the argument is a safe integer.</p>
+    <p>Otherwise is returns false.</p>
+
+    <p id="demo27"></p>
+
+    <script>
+        document.getElementById("demo27").innerHTML = Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890);
+    </script>
+
+</body>
+</html>

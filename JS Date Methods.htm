@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--JS GET DATE METHODS-->
+
+    <!--DATE GET METHODS:
+        getFullYear()    =>    Get year as a four digit number (yyyy)
+        getMonth()       =>    Get month as a number (0-11)
+        getDate()        =>    Get day as a number (1-31)
+        getDay()         =>    Get weekday as a number (0-6)
+        getHours()       =>    Get hour (0-23)
+        getMinutes()     =>    Get minute (0-59)
+        getSeconds()     =>    Get second (0-59)
+        getMilliseconds  =>    Get millisecond (0-999)
+        getTime()        =>    Get time (milliseconds since January 1, 1970)
+    -->
+    <!--The get methods return information from existing date objects.-->
+    <!--You can use an array of names, and getDay() to return weekday as a name.-->
+
+    <!--UTC DATE GET METHODS:
+        getUTCFullYear()    =>    Returns the UTC year 
+        getUTCMonth()       =>    Returns the UTC month
+        getUTCDate()        =>    Returns the UTC date
+        getUTCDay()         =>    Returns the UTC day
+        getUTCHours()       =>    Returns the UTC hour
+        getUTCMinutes()     =>    Returns the UTC minutes
+        getUTCSeconds()     =>    Returns the UTC seconds
+        getUTCMilliseconds  =>    Returns the UTC milliseconds
+    -->
+
+    <h2>The getTimezoneOffset() Method</h2>
+
+    <p>The time zone difference in minutes is:</p>
+    <p id="demo"></p>
+
+    <script>
+        const d = new Date();
+        document.getElementById("demo").innerHTML = d.getTimezoneOffset();
+    </script><br>
+
+<!--JS SET DATE METHODS-->
+
+    <h2>JavaScript setFullYear()</h2>
+    <p>The setFullYear() method sets the year of a date object:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        const d1 = new Date();
+        d1.setFullYear(2020);
+        document.getElementById("demo1").innerHTML = d1;
+    </script><br>
+
+    <p>The setFullYear() method can optionally set month and day.</p>
+    <p>Please note that month counts from 0. December is month 11:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        const d2 = new Date();
+        d2.setFullYear(2020, 11, 3);
+        document.getElementById("demo2").innerHTML = d2;
+    </script><br>
+
+    <h2>Javascript setMonth()</h2>
+    <p>The setMonth() method sets the month of a date object.</p>
+    <p>Note that months counts from 0. December is month 11:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        const d3 = new Date();
+        d3.setMonth(11);
+        document.getElementById("demo3").innerHTML = d3;
+    </script><br>
+
+    <h2>Javascript setDate()</h2>
+    <p>The setDate() method sets the day of a date object.</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        const d4 = new Date();
+        d4.setDate(15);
+        document.getElementById("demo4").innerHTML = d4;
+    </script><br>
+
+    <p>The setDate() method can be used to add days to a date.</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        const d5 = new Date();
+        d5.setDate(d5.getDate() + 50);
+        document.getElementById("demo5").innerHTML = d5;
+    </script><br>
+
+    <!--If adding days shifts the month or year, the changes are handled automatically by the Date object.-->
+
+    <h2>JavaScript setHours()</h2>
+    <p>The setHours() method sets the hours of a date object:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        const d6 = new Date();
+        d6.setHours(22);
+        document.getElementById("demo6").innerHTML = d6;
+    </script><br>
+
+    <h2>JavaScript setMinutes()</h2>
+    <p>The setMinutes() method sets the minutes of a date object (0-59):</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        const d7 = new Date();
+        d7.setMinutes(30);
+        document.getElementById("demo7").innerHTML = d7;
+    </script><br>
+
+    <h2>JavaScript setSeconds()</h2>
+    <p>The setSeconds() method sets the seconds of a date object (0-59):</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        const d8 = new Date();
+        d8.setSeconds(30);
+        document.getElementById("demo8").innerHTML = d8;
+    </script><br>
+
+<!--COMPARE DATES-->
+
+    <p id="demo9"></p>
+
+    <script>
+        let text;
+        const today = new Date();
+        const someday = new Date();
+        someday.setFullYear(2100, 0, 14);
+
+        if (someday > today) {
+            text = "Today is before January 14, 2100.";
+        } else {
+            text = "Today is after January 14, 2100.";
+        }
+
+        document.getElementById("demo9").innerHTML = text;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--COMPARING DIFFERENT TYPES-->
+
+    <h2>JavaScript Comparisons</h2>
+
+    <p>Input your age and click the button:</p>
+
+    <input id="age" value="" />
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo"></p>
+
+    <script>
+        function myFunction() {
+            let votable;
+            let age = 
+            Number(document.getElementById("age").value);
+            if (isNaN(age)) {
+                votable = "Input is not a number";
+            } else {
+                votable = (age < 18) ? "Too young" : "Old enough";   
+            }
+
+            document.getElementById("demo").innerHTML = votable + " to vote";
+        }
+    </script>
+
+<!--THE NULLISH COALESING OPERATOR-->
+
+    <h2>The ?? Operator</h2>
+
+    <p>The ?? operator returns the first argument if it is not nullish (null or undefined). Otherwise it returns the second.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        let name = null;
+        let text = "missing";
+        let result = name ?? text;
+        document.getElementById("demo1").innerHTML = "The name is " + result;
+    </script>
+
+<!--THE OPTIONAL CHAINING OPERATOR-->
+
+    <h2>The ?. Operator</h2>
+    <p>The ?. operator returns undefined if an object is undefined or null (instead of throwing an error).</p>
+
+    <p>Car name is:</p>
+    <p id="demo2"></p>
+
+    <script>
+        const car = {type:"Fiat", model:"500", color:"white"};
+        let name1 = car?.name1;
+        document.getElementById("demo2").innerHTML = name1;
+    </script>
+
+</body>
+</html>

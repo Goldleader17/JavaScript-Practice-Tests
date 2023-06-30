@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--Set Methods-->
+
+    <!--The new Set() Method-->
+
+    <h2>JavaScript Sets</h2>
+    <p>Create a Set from an Array:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        // Create a Set
+        const letters = new Set(["a","b","c"]);
+
+        // Display set.size
+        document.getElementById("demo").innerHTML = letters.size;
+    </script>
+
+    <!--The add() Method-->
+
+    <h2>JavaScript Sets</h2>
+    <p>Adding new elements to a Set:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        // Create a Set
+        const letters1 = new Set(["a","b","c"]);
+
+        // Add a new Element
+        letters1.add("d");
+        letters1.add("e");
+
+        // Display set.size
+        document.getElementById("demo1").innerHTML = letters1.size;
+    </script>
+
+    <p>Adding equal elements to a Set:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        // Create a Set
+        const letters2 = new Set();
+
+        // Add a new Element
+        letters2.add("a");
+        letters2.add("b");
+        letters2.add("c");
+        letters2.add("c");
+        letters2.add("c");
+        letters2.add("c");
+
+        // Display set.size
+        document.getElementById("demo2").innerHTML = letters2.size;
+    </script>
+
+    <!--The values() Method-->
+
+    <h2>JavaScript Sets</h2>
+    <p>Set.values() returns a Set Iterator:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        // Create a Set
+        const letters3 = new Set(["a","b","c"]);
+
+        // Display set.size
+        document.getElementById("demo3").innerHTML = letters3.values();
+    </script>
+
+    <h2>JavaScript Keys</h2>
+    <p>Set.keys() returns a Set Iterator:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        // Create a Set
+        const letters4 = new Set(["a","b","c"]);
+
+        // Display set.size
+        document.getElementById("demo4").innerHTML = letters4.keys();
+    </script>
+
+    <!--A set has no keys. keys() returns the same as values(). This makes Sets compatible with Maps-->
+
+    <h2>JavaScript Sets</h2>
+    <p>Iterating Set values:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        // Create a Set
+        const letters5 = new Set(["a","b","c"]);
+
+        // List all Elements
+        let text = "";
+        for (const x of letters5.values()) {
+            text += x + "<br>";
+        }
+
+        document.getElementById("demo5").innerHTML = text;
+    </script><br>
+
+    <p>entries() Returns an Iterator with [value,value] pairs from a Set:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        // Create a Set
+        const letters6 = new Set(["a","b","c"]);
+
+        // List all entries
+        const iterator = letters6.entries();
+        let text1 = "";
+        for (const entry of iterator) {
+            text1 += entry + "<br>";
+        }
+
+        document.getElementById("demo6").innerHTML = text1;
+    </script>
+
+    <!--Sets are Objects-->
+ 
+</body>
+</html>

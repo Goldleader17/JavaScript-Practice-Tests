@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--
+        1. Accidentally using the assignment operator (=) instead of a comparison operator (===)
+
+        2. Expecting loose comparison.
+
+        3. Forgetting that "switch" statements use strict comparison.
+
+        4. Confusing addition & concatenation.
+
+        5. Misunderstanding floats.
+
+        6. Breaking a JavaScript string. You must use a "backslash(\)" if you must break a statement in a string.
+
+        7. Misplacing semicolon.
+
+        8. Breaking a return statement. Never break a return statement.
+
+        9. Accessing arrays with named indexes. In JavaScript, arrays use numbered indexes.
+           (In JavaScript, objects use named indexes.)
+        
+        10.Ending definitions with a comma.
+
+        11.Undefined is not null. If you want to test if an object is not null, you must test if it's not undefined first.
+    -->
+
+    <h2>JavaScript Objects</h2>
+
+    <p>If you want to test if an object is not null, you must test if it's not undefined first.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 
+       typeof myObj !== "undefined" && myObj !== null;
+    </script>
+
+</body>
+</html>

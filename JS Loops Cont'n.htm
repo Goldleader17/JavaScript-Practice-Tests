@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--The Break Statement-->
+
+    <h2>JavaScript Loops</h2>
+
+    <p>A loop with a <b>break</b> statement.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let text = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 5) { break; }
+            text += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script>
+
+<!--The Continue Statement-->
+    
+    <h2>JavaScript Loops</h2>
+
+    <p>A loop with a <b>continue</b> statement.</p>
+    <p>A loop which will skip the step where i = 3.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        let text1 = "";
+        for (let i = 0; i < 10; i++) {
+            if (i === 3) { continue; }
+            text1 += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo1").innerHTML = text1;
+    </script>
+
+<!--JavaScript Labels-->
+
+    <h2>JavaScript break</h2>
+
+    <p id="demo2"></p>
+
+    <script>
+        const cars = ["BMW", "Hotrod", "Ford", "Volvo"];
+        let text2 = "";
+
+        list: {
+            text2 += cars[0] + "<br>";
+            text2 += cars[1] + "<br>";
+            break list;
+            text2 += cars[2] + "<br>";
+            text2 += cars[3] + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = text2;
+    </script>
+
+    <!--A code block is a block of code between { and }-->
+
+<!--JavaScript Iterables-->
+
+    <h2>JavaScript Iterables</h2>
+    <p>Iterable over a Set:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        // Create a Set
+        const letters = new Set(["a","b","c","d"]);
+
+        // List all Elements
+        let text3 = "";
+        for (const x of letters) {
+            text3 += x + "<br>";
+        }
+        document.getElementById("demo3").innerHTML = text3;
+    </script>
+
+    <h2>JavaScript Iterables</h2>
+    <p>Iterable over a Map:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        // Create a Map
+        const fruits = new Map([
+            ["apples", 500],
+            ["bananas", 300],
+            ["oranges", 200]
+        ]);
+
+        // List all entries
+        let text4 = "";
+        for (const x of fruits) {
+            text4 += x + "<br>";
+        }
+        document.getElementById("demo4").innerHTML = text4;
+    </script>
+
+</body>
+</html>

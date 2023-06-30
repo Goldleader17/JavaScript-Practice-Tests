@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <!--
+        Avoid global variables, avoid "new", avoid "==", avoid "eval()"
+
+        Always declare local variables.
+
+        Always put declarations on top. This also goes for loop variables.
+
+        Initialize variables when you declare them.
+
+        Declaring objects with const will prevent any accidental change of type.
+
+        Declaring arrays with const will prevent any accidental change of type.
+
+        Don't use new Object()
+            * Use "" instead of new String()
+            * Use 0 instead of new Number()
+            * Use false instead of new Boolean()
+            * Use {} instead of new Object()
+            * Use [] instead of new Array()
+            * Use /()/ instead of new RegExp()
+            * Use function () {} instead of new Function().
+
+        Beware of Automatic Type conversions.
+
+        Use === comparison.
+
+        Use parameter defaults.
+
+        Always end your "switch" statements with a default, Even if you think there is no need for it.
+
+        Avoid Number, String and Boolean as Objects.
+
+    -->
+
+    <h2>JavaScript Comparisons</h2>
+
+    <p>Remove the comment (at the beginning of each line) to test each case:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        let x;
+        //x = (0 == "");      // true
+        //x = (1 == "1");     // true
+        //x = (1 == true);    // true
+        //x = (0 === "");     // false
+        //x = (1 === "1");    // false
+        //x = (1 === true);   // false
+        document.getElementById("demo").innerHTML = x;
+    </script>
+
+    <h2>JavaScript Functions</h2>
+
+    <p>Setting a default value to a function parameter.</p>
+    <p id="demo1"></p>
+
+    <script>
+        function myFunction(x, y)  {
+            if (y === undefined) {
+                y = 0;
+            }
+            return x * y;
+        }
+        document.getElementById("demo1").innerHTML = myFunction(4);
+    </script>
+
+</body>
+</html>

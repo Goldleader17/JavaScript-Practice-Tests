@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!--The if Statement-->
+
+    <h2>JavaScript if</h2>
+
+    <p>Display "Good day!" if the hour is less than 18:00:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        if (new Date().getHours() < 18) {
+            document.getElementById("demo").innerHTML = "Good day!";
+        }
+    </script>
+
+    <!--The else Statement-->
+
+    <h2>JavaScript if .. else</h2>
+
+    <p>A time-based greeting:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        const hour = new Date().getHours();
+        let greeting;
+
+        if (hour < 18) {
+            greeting = "Good day";
+        } else {
+            greeting = "Good evening";
+        }
+
+        document.getElementById("demo1").innerHTML = greeting;
+    </script>
+
+    <!--The else if Statement-->
+
+    <h2>JavaScript if .. else</h2>
+
+    <p>A time-based greeting:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        const time = new Date().getHours();
+        let greeting1;
+
+        if (time < 10) {
+            greeting1 = "Good morning";
+        } else if (time < 20) {
+            greeting1 = "Good day";
+        } else {
+            greeting1 = "Good evening";
+        }
+        document.getElementById("demo2").innerHTML = greeting1;
+    </script>
+
+    <!--The switch Statement-->
+
+    <h2>JavaScript switch</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+        let day;
+        switch (new Date().getDay()) {
+            case 0:
+                day = "Sunday";
+                break;
+            case 1:
+                day = "Monday";
+                break;
+            case 2:
+                day = "Tuesday";
+                break;
+            case 3:
+                day = "Wednesday";
+                break;
+            case 4:
+                day = "Thursday";
+                break;
+            case 5:
+                day = "Friday";
+                break;
+            case 6:
+                day = "Saturday";   
+        }
+        document.getElementById("demo3").innerHTML = "Today is " + day;
+    </script>
+
+    <!--NB: If you omit the break statement, the next case will be executed even if the evaluation does not match the case.-->
+
+    <!--The default Keyword-->
+
+    <p>The default keyword specifies the code to run if there is no case match:</p>
+
+    <p id="demo4"></p>
+
+    <script>
+        let text;
+        switch (new Date().getDay()) {
+            case 6:
+                text = "Today is Saturday";
+                break;
+            case 0:
+                text = "Today is Sunday";
+                break;
+            default:
+                text = "Looking forward to the Weekend";
+        }
+        document.getElementById("demo4").innerHTML = text;
+    </script>
+
+    <!--The default case doesn't have to be the last case in a switch block. If default is not the last case, remember to end the default case with a break.
+    -->
+
+    <!--Common Code Blocks-->
+
+    <h2>JavaScript switch</h2>
+    <p id="demo5"></p>
+
+    <script>
+        let text1;
+        switch (new Date().getDay()) {
+            case 4:
+            case 5:
+                text1 = "Soon it is Weekend";
+                break;
+            case 0:
+            case 6:
+                text1 = "It  is Weekend";
+                break;
+            default:
+                text1 = "Looking forward to the Weekend";
+        }
+        document.getElementById("demo5").innerHTML = text1;
+    </script>
+
+    <!--Strict Comparison-->
+
+    <h2>JavaScript switch</h2>
+    <p id="demo6"></p>
+
+    <script>
+        let x = "0";
+
+        switch (x) {
+            case 0:
+                text = "Off";
+                break;
+            case 1:
+                text = "On";
+                break;
+            default:
+                text = "No value found";
+        }
+        document.getElementById("demo6").innerHTML = text;
+    </script>
+
+    <!--switch cases use strict comparison (===). The values must be of the same typr to match. A strict comparison can only be true if the operands are of the same type. In the above example, there will be no match for x.
+    -->
+    
+</body>
+</html>

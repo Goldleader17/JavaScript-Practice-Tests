@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<!--For Loop-->
+
+    <h2>JavaScript For Loop</h2>
+
+    <p id="demo"></p>
+
+    <script>
+        const cars = ["BMW", "Audi", "Volvo", "Saab", "Fiat", "Ford"];
+
+        let text = "";
+        for (let i = 0; i < cars.length; i++) {
+            text += cars[i] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = text;
+    </script><br>
+
+    <!--Expression 1-->
+
+    <p id="demo1"></p>
+
+    <script>
+        let text1 = "";
+        let i = 0;
+
+        for (; i < 6; i++) {
+            text1 += "The number is " + i + "<br>";
+        }
+        document.getElementById("demo1").innerHTML = text1;
+    </script>
+
+    <p id="demo2"></p>
+
+    <script>
+        const cars1 = ["BMW", "Audi", "Volvo", "Saab", "Fiat", "Ford"];
+
+        let a, len, text2;
+        for (a = 0, len = cars.length, text = ""; a < len; a++) {
+            text += cars1[a] + "<br>";
+        }
+        document.getElementById("demo2").innerHTML = text;
+    </script>
+
+    <!--<p id="demo3"></p>
+    
+    <script>
+        const cars2 = ["BMW", "Volvo", "Saab", "Ford"];
+
+        let x = 0;
+        let len2 = cars2.length;
+        let text3 = "";
+
+        for (; x < len2; ) {
+            text3 += cars2[x] + "<br>";
+        }
+        document.getElementById("demo3").innerHTML = text3;
+    </script>-->
+
+<!--Loop Scope-->
+    <!--Using var in a loop.-->
+
+    <h2>JavaScript let</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+        var y = 5;
+        for (var y = 0; y < 10; y++) {
+            // some elements
+        }
+        document.getElementById("demo3").innerHTML = y;
+    </script>
+
+    <!--Using let in a loop-->
+
+    <h2>JavaScript let</h2>
+
+    <p id="demo4"></p>
+
+    <script>
+        let z = 5;
+        for (let z = 5; z < 10; z++) {
+            // some elements
+        }
+        document.getElementById("demo4").innerHTML = z;
+    </script>
+
+<!--The For In Loop-->
+
+    <h2>JavaScript For In Loop</h2>
+    <p>The for in statement loops through the properties of an object:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        const person = {fName:"John", lName:"Doe", age:25};
+
+        let txt = "";
+        for (let x in person) {
+            txt += person[x] + " ";
+        }
+        document.getElementById("demo5").innerHTML = txt;
+    </script>
+
+    <h2>For In Loops</h2>
+    <p>The for in statement can loop over array values:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        const numbers = [45, 4, 9, 16, 25];
+
+        let txt1 = "";
+        for (let x in numbers) {
+            txt1 += numbers[x] + "<br>";
+        }
+        document.getElementById("demo6").innerHTML = txt1;
+    </script>
+
+    <!--NB: Do not use "for in" over an Array if the index "order" is important.
+        The index order is implementation-dependent, and array values may not be accessed in the order you expect.
+        It is better to use a "for" loop, a "for of" loop, or "Array.forEach()" when the order is important.
+    -->
+
+<!--Array.forEach()-->
+
+    <h2>The forEach() Method</h2>
+    <p>Call a function once for each array element:</p>
+
+    <p id="demo7"></p>
+
+    <script>
+        const numbers1 = [45, 4, 9, 16, 25];
+
+        let txt2 = "";
+        numbers1.forEach(myFunction);
+        document.getElementById("demo7").innerHTML = txt2;
+
+        function myFunction(value, index, array)
+        {
+            txt2 += value + "<br>";
+        }
+    </script>
+
+<!--The For Of Loop-->
+    <!--Looping over an Array-->
+
+    <h2>JavaScript For Of Loop</h2>
+    <p>The for of statement loops through the values of any iterable object:</p>
+
+    <p id="demo8"></p>
+
+    <script>
+        const Cars = ["BMW", "Volvo", "Mini"];
+
+        let Text = "";
+        for (let x of Cars) {
+            Text += x + "<br>";
+        }
+        document.getElementById("demo8").innerHTML = Text;
+    </script>
+
+    <!--Looping over a String-->
+
+    <h2>JavaScript For Of Loop</h2>
+    <p>The for of statement loops through the values of an iterable object:</p>
+
+    <p id="demo9"></p>
+
+    <script>
+        let language = "JavaScript";
+
+        let Text1 = "";
+        for (let x of language) {
+            Text1 += x + "<br>";
+        }
+        document.getElementById("demo9").innerHTML = Text1;
+    </script>
+
+<!--The While Loop-->
+
+    <h2>JavaScript While Loop</h2>
+
+    <p id="demo10"></p>
+
+    <script>
+        let txt3 = "";
+        let p = 0;
+        while (p < 10) {
+            txt3 += "<br>The number is " + p;
+            p++;
+        }
+        document.getElementById("demo10").innerHTML = txt3;
+    </script>
+
+    <!--If you forget to increase the variable used in the condition, the loop will never end.
+        This will crash your browser.
+    -->
+
+<!--The Do While Loop-->
+
+    <h2>JavaScript Do While Loop</h2>
+
+    <p id="demo11"></p>
+
+    <script>
+        let txt4 = "";
+        let q = 0;
+        do {
+            txt4 += "<br>The number is " + q;
+            q++;
+        }
+        while (q < 10) {
+            document.getElementById("demo11").innerHTML = txt4;
+        }
+    </script>
+    <!--In this case, the loop will always be executed at least once, even if the condition is false, because the code block is executed before the condition is tested.-->
+
+<!--Comparing For and While-->
+
+    <!--A while loop is much more the same as a for loop with statement 1 and 3 omitted.-->
+
+    <!--The loop is this example uses a for loop to collect the car names from the cars array.-->
+
+    <p id="demo12"></p>
+
+    <script>
+        const cars2 = ["BMW", "Volvo", "Saab", "Hotrod"];
+
+        let c = 0;
+        let text3 = "";
+        for (;cars2[c];) {
+            text3 += cars2[c] + "<br>";
+            c++;
+        }
+        document.getElementById("demo12").innerHTML = text3;
+    </script>
+
+    <!--The loop is this example uses a while loop to collect the car names from the cars array.-->
+
+    <p id="demo13"></p>
+
+    <script>
+        const cars3 = ["BMW", "Volvo", "Saab", "Hotrod"];
+
+        let d = 0;
+        let text4 = "";
+        while (cars3[d]) {
+            text4 += cars3[d] + "<br>";
+            d++;
+        }
+        document.getElementById("demo13").innerHTML = text4;
+    </script>
+    
+</body>
+</html>

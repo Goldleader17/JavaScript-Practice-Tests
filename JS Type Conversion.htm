@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<!--CONVERTING STRINGS TO NUMBERS-->
+
+    <h1>JavaScript Numbers</h1>
+    <h2>The Number() Method</h2>
+
+    <p>The Number() method converts a variable (or value) into a number:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 
+        Number("3.14") + "<br>" + 
+        Number(Math.PI) + "<br>" + 
+        Number("    ") + "<br>" + 
+        Number("") + "<br>" + 
+        Number("99 88") + "<br>" + 
+        Number("John") + "<br>";
+    </script>
+
+    <!--The Unary + Operator-->
+
+    <h2>The JavaScript typeof Operator</h2>
+
+    <p>The typeof operator returns the type of a variable or expression:</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        let y = "5";
+        let x = + y;
+        document.getElementById("demo1").innerHTML = typeof y + "<br>" + typeof x;
+    </script>
+
+<!--CONVERTING NUMBERS TO STRINGS-->
+
+    <h2>The JavaScript String() Method</h2>
+
+    <p>The String() method can convert a number to a string.</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        let z = 123;
+        document.getElementById("demo2").innerHTML = 
+        String(z) + "<br>" + 
+        String(123) + "<br>" + 
+        (100 + 23).toString();
+    </script>
+
+<!--Automatic Type Conversions-->
+
+    <h2>JavaScript Type Conversions</h2>
+
+    <p id="demo3"></p>
+
+    <script>
+        document.getElementById("demo3").innerHTML = 
+        (5 + null) + "<br>" + 
+        ("5" + null) + "<br>" + 
+        ("5" + 2) + "<br>" + 
+        ("5" - 2) + "<br>" + 
+        ("5" * "2") + "<br>" + 
+        ("5" / "2") + "<br>";
+    </script>
+</body>
+</html>

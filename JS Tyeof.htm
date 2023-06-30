@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h1>JavaScript Operators</h1>
+    <h2>The typeof Operator</h2>
+
+    <p>The typeof operator returns the type of a variable, object, function, or expression:</p>
+
+    <p id="demo"></p>
+
+    <script>
+        document.getElementById("demo").innerHTML = 
+        "'John' is " + typeof "John" + "<br>" + 
+        "3.14 is " + typeof 3.14 + "<br>" + 
+        "NaN is " + typeof NaN + "<br>" + 
+        "false is " + typeof false + "<br>" + 
+        "[1, 2, 3, 4] is " + typeof [1, 2, 3, 4] + "<br>" + 
+        "{name: 'John', age:34} is " + typeof {name: 'John', age:34} + "<br>" + 
+        "new Date() is " + typeof new Date() + "<br>" + 
+        "function () {} is " + typeof function () {} + "<br>" + 
+        "myCar is " + typeof myCar + "<br>" + 
+        "null is " + typeof null;
+    </script>
+
+    <!--The typeof operator returns "object" for arrays because in JavaScript arrays are objects.-->
+
+    <!--The constructor Property-->
+
+    <h1>JavaScript Properties</h1>
+    <h2>The constructor Property</h2>
+
+    <p>The constructor property returns the constructor function for a variable or an object.</p>
+
+    <p id="demo1"></p>
+
+    <script>
+        document.getElementById("demo1").innerHTML = 
+        "John".constructor + "<br>" + 
+        (3.14).constructor + "<br>" + 
+        false.constructor + "<br>" + 
+        [1,2,3,4].constructor + "<br>" + 
+        {name: 'John', age:34}.constructor + "<br>" + 
+        new Date().constructor + "<br>" + 
+        function () {}.constructor;
+    </script>
+
+    <h2>JavaScript Array Object</h2>
+    <p>This "home made" isArray() function returns true when used on an array:</p>
+
+    <p id="demo2"></p>
+
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("demo2").innerHTML = isArray(fruits);
+
+        function isArray(myArray) {
+            return myArray.constructor === Array;
+        }
+    </script>
+
+    <h2>JavaScript Date Object</h2>
+    <p>This "home made" isDate() function returns true when used on a date:</p>
+
+    <p id="demo3"></p>
+
+    <script>
+        const myDate = new Date();
+        document.getElementById("demo3").innerHTML = isDate(myDate);
+
+        function isDate(myDate) {
+            return myDate.constructor === Date;
+        }
+    </script>
+
+    <!--Undefined-->
+
+    <h2>The typeof Operator</h2>
+    <p>The value (and the data type) of a variable with no value is <b>undefined</b></p>
+
+    <p id="demo4"></p>
+
+    <script>
+        let car;
+        document.getElementById("demo4").innerHTML = 
+        car + "<br>" + typeof car;
+    </script>
+
+    <!--Empty Value-->
+
+    <h2>JavaScript</h2>
+
+    <p>An empty string has both a legal value and a type:</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        let car1 = "";
+        document.getElementById("demo5").innerHTML = "The value is: " + "<br>" + "The type is: " + typeof car1;
+    </script>
+
+    <!--You can consider it a bug that "typeof null" is an object. It should be "null".-->
+
+    <!--You can empty an object by setting it to "null" or "undefined". Undefined and null are equal in value but different in type-->
+
+    <!--The instanceof Operator-->
+
+    <h2>The instanceof Operator</h2>
+
+    <p>The instanceof operator returns true if an object is an instance of a specified object:</p>
+
+    <p id="demo6"></p>
+
+    <script>
+        const cars = ["Hotrod", "Tesla", "Bugatti", "BMW"];
+        document.getElementById("demo6").innerHTML = 
+        (cars instanceof Array) + "<br>" + 
+        (cars instanceof Object) + "<br>" + 
+        (cars instanceof String) + "<br>" + 
+        (cars instanceof Number);
+    </script>
+
+    <!--The void operator-->
+
+    <h2>The void operator</h2>
+
+    <p>
+        <a href="javascript:void(0);">Useless link</a>
+    </p>
+    <p>
+        <a href="javascript:void(document.body.style.backgroundColor='cyan');">
+            Click me to change the background color of body to cyan.
+        </a>
+    </p>
+
+</body>
+</html>

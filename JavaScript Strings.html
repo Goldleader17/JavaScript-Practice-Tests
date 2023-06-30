@@ -2,7 +2,7 @@
 <html>
 
 <body>
-    <h2>JavaScript Strings</h2>
+    <h1>JavaScript Strings</h1>
     <p id="demo"></p>
 
     <script>
@@ -16,5 +16,254 @@
 
     <!--Do not create string objects. The "new" keyword complicates the code and slows down execution speed.
     String objects can produce unexpected results. Comparing two JavaScript objects always returns false.-->
+
+<!--THE LENGTH PROPERTY-->
+
+    <h1>JavaScript String Methods</h1>
+    <h2>The length Property</h2>
+
+    <p>The length of the string is:</p>
+    <p id="demo1"></p>
+
+    <script>
+        let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        document.getElementById("demo1").innerHTML = text.length;
+    </script>
+
+    <!--There are 3 methods for extracting a part of a string: slice(start, end), substring(start, end) & substr(start, length)-->
+    <!--slice() extracts a part of a string and returns the extracted part in a new string. If you omit the second parameter,the method will slice out the rest of the string. If the position is negative, the position counts from the end of the string.-->
+
+<!--THE SLICE() METHOD-->
+
+    <h2>The slice() Method</h2>
+
+    <p>The sliced (extracted) part of the string is:</p>
+    <p id="demo2"></p>
+
+    <script>
+        let sample = "Apple, Banana, Kiwi";
+        let part = sample.slice(7,13);
+        document.getElementById("demo2").innerHTML = part;
+    </script>
+
+    <!--NB: JavaScript counts positions from zero.-->
+    <!--substring() is similar to slice(). The difference is that start and end values less than 0 are treated as 0 in substring()-->
+    <!--substr() is similar to slice(). The difference is that the second parameter specifies the length of the extracted part.-->
+
+<!--THE REPLACE() METHOD-->
+
+    <h2>The replace() method</h2>
+    <p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <p id="demo3">Please visit Microsoft!</p>
+
+    <script>
+        function myFunction() {
+            let text = document.getElementById("demo3").innerHTML;
+
+            document.getElementById("demo3").innerHTML = text.replace("Microsoft","W3Schools");
+        }
+    </script>
+
+    <!--The replace() method replaces only the first match, If you want to replace all matches, use a regular expression with a /g flag.
+    NB: regular expressions are written without quotes. To replace case insensitive, use a regular expression with an /i flag.-->
+
+    <p>Replace all occurences of "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+    <button onclick="myFunction1()">Try it</button>
+
+    <p id="demo4">Please visit Microsoft and Microsoft!</p>
+
+    <script>
+        function myFunction1() {
+            let text = document.getElementById("demo4").innerHTML;
+
+            document.getElementById("demo4").innerHTML = text.replace(/Microsoft/g,"W3Schools");
+        }
+    </script>
+
+<!--THE REPLACEALL() METHOD-->
+
+    <h2>The replaceAll() method</h2>
+
+    <p>ES2021 introduced the string method replaceAll().</p>
+
+    <p id="demo5"></p>
+
+    <script>
+        let text1 = "I love cats. Cats are very easy to love. Cats are very popular."
+        text1 = text1.replaceAll("Cats","Dogs");
+        text1 = text1.replaceAll("cats","dogs");
+
+        document.getElementById("demo5").innerHTML = text1;
+    </script>
+
+    <!--replaceAll() does not work in Internet Explorer.-->
+
+<!--THE TOUPPERCASE() METHOD-->
+
+    <h2>The toUpperCase() method</h2>
+    <p>Convert string to upper case:</p>
+
+    <button onclick="myFunction2()">Try it</button>
+
+    <p id="demo6">Hello World!</p>
+
+    <script>
+        function myFunction2() {
+            let text = document.getElementById("demo6").innerHTML;
+
+            document.getElementById("demo6").innerHTML = text.toUpperCase();
+        }
+    </script>
+
+<!--THE TOLOWERCASE() METHOD-->
+
+    <h2>The toLowerCase() method</h2>
+    <p>Convert string to lower case:</p>
+
+    <button onclick="myFunction3()">Try it</button>
+
+    <p id="demo7">Hello World!</p>
+
+    <script>
+        function myFunction3() {
+            let text = document.getElementById("demo7").innerHTML;
+    
+            document.getElementById("demo7").innerHTML = text.toLowerCase();
+        }
+    </script>
+
+    <!--The concat() method joins two or more strings and can be used instead of the plus operator.-->
+    <!--NB: All strings methods return a new string. They don't modify the original string. Strings are immutable: Strings cannot be changed,only replaced.-->
+
+<!--THE TRIM() METHOD-->
+
+    <h2>The trim() Method</h2>
+
+    <p id="demo8"></p>
+
+    <script>
+        let textA = "      Hello World!      ";
+        let textB = textA.trim();
+
+        document.getElementById("demo8").innerHTML = "Length textA = " + textA.length + "<br>Length textB = " + textB.length;
+    </script>
+
+    <!--The trim() method removes whitespace from both sides of a string.-->
+    <!--The trimStart() method works like trim() but removes whitespace only from the start of a string, the trimEnd() method works vice-versa. They're supported in all mordern browsers since January 2020.-->
+
+<!--THE TRIMSTART() METHOD-->
+
+    <h2>The trimStart() Method</h2>
+
+    <p id="demo9"></p>
+
+    <script>
+        let textX = "      Hello World!      ";
+        let textY = textX.trimStart();
+
+        document.getElementById("demo9").innerHTML = "Length textX = " + textX.length + "<br>Length textY = " + textY.length;
+    </script>
+
+<!--THE PADSTART() METHOD-->
+
+    <h2>The padStart() Method</h2>
+
+    <p>The padStart() method pads a string from the start.</p>
+    <p>Its pads the string with another string multiple times until it reaches a given length.</p>
+
+    <p id="demo10"></p>
+
+    <script>
+        let numb = 5;
+        let text2 = numb.toString();
+    
+        document.getElementById("demo10").innerHTML = text2.padStart(4,"x");
+    </script>
+
+<!--THE CHARAT() METHOD-->
+
+    <h2>The charAt() Method</h2>
+
+    <p>The charAt() method returns the character at a given position in a string:</p>
+
+    <p id="demo11"></p>
+
+    <script>
+        var text3 = "HELLO WORLD";
+        document.getElementById("demo11").innerHTML = text3.charAt(0);
+    </script>
+
+<!--THE CHARCODEAT() METHOD-->
+
+    <h2>The charCodeAt() Method</h2>
+
+    <p>The charCodeAt() method returns the unicode of the character at a given position in a string:</p>
+
+    <p id="demo12"></p>
+
+    <script>
+        let text4 = "HELLO WORLD";
+        document.getElementById("demo12").innerHTML = text4.charCodeAt(0);
+    </script>
+
+<!--PROPERTY ACCESS-->
+
+    <p>Property access on strings:</p>
+
+    <p>The first character in the string is:</p>
+    <p id="demo13"></p>
+
+    <script>
+        let text5 = "HELLO WORLD";
+        document.getElementById("demo13").innerHTML = text5[0];
+    </script>
+
+    <!--Property access might be a little unpredictable; It makes strings look like arrays (but they are not), If no character is found,[] returns undefined, while charAt() returns an empty string, It is read only.str[0]="A" gives no error (but does not work!).-->
+
+    <p>Property access on strings are read only:</p>
+
+    <p id="demo14"></p>
+
+    <script>
+        let text6 = "HELLO WORLD";
+
+        text[0] = "A";  // Does not work
+
+        document.getElementById("demo14").innerHTML = text6;
+    </script>
+
+<!--CONVERTING A STRING TO AN ARRAY-->
+
+    <p>Display the first array element, after a string split:</p>
+
+    <p id="demo15"></p>
+
+    <script>
+        let text7 = "a,b,c,d,e,f";
+        const myArray = text7.split(",");
+        document.getElementById("demo15").innerHTML = myArray[0];
+    </script>
+
+<!--THE SPLIT() METHOD-->
+
+    <h2>The split() Method</h2>
+
+    <p id="demo16"></p>
+
+    <script>
+        let text8 = "Hello";
+        const myArr = text8.split("");
+
+        text8 = "";
+        for (let i = 0; i < myArr.length; i++) {
+            text8 += myArr[i] + "<br>"
+        }
+        document.getElementById("demo16").innerHTML = text8;
+    </script>
+
 </body>
 </html>
