@@ -12,12 +12,6 @@
 
     <p id="demo"></p>
 
-    <script>
-        const fruits = ["Banana", "Orange", "Apple", "Mango"];
-        let size = fruits.length;
-        document.getElementById("demo").innerHTML = size;
-    </script>
-
 <!--THE toString() METHOD-->
 
     <h2>The toString Method</h2>
@@ -25,11 +19,6 @@
     <p>The toString() method returns an array as a comma separated string:</p>
 
     <p id="demo1"></p>
-
-    <script>
-        const fruits1 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo1").innerHTML = fruits1.toString();
-    </script>
 
 <!--THE join() METHOD-->
 
@@ -40,10 +29,6 @@
 
     <p id="demo2"></p>
 
-    <script>
-        const fruits2 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo2").innerHTML = fruits2.join(" * ");
-    </script>
 
 <!--THE pop() METHOD-->
 
@@ -54,13 +39,6 @@
     <p id="demo3"></p>
     <p id="demo4"></p>
 
-    <script>
-        const fruits3 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo3").innerHTML = fruits3;
-        fruits3.pop();
-        document.getElementById("demo4").innerHTML = fruits3;
-    </script>
-
 <!--THE push() METHOD-->
 
     <h2>The push() Method</h2>
@@ -68,25 +46,12 @@
     <p>The push() method appends a new element to an array:</p>
 
     <p id="demo5"></p>
-    <p id="demo6"></p>
-
-    <script>
-        const fruits4 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo5").innerHTML = fruits4;
-        fruits4.push("pineapple");
-        document.getElementById("demo6").innerHTML = fruits4;
-    </script><br>
+    <p id="demo6"></p><br>
 
     <p>The push() method returns the new array length</p>
 
     <p id="demo7"></p>
     <p id="demo8"></p>
-
-    <script>
-        const fruits5 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo7").innerHTML = fruits5.push("pineapple");
-        document.getElementById("demo8").innerHTML = fruits5;
-    </script>
 
 <!--THE shift() METHOD-->
 
@@ -95,25 +60,12 @@
     <p>The shift() method removes the first element of an array (and "shifts" the other elements to the left):</p>
 
     <p id="demo9"></p>
-    <p id="demo10"></p>
-
-    <script>
-        const fruits6 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo9").innerHTML = fruits6;
-        fruits6.shift();
-        document.getElementById("demo10").innerHTML = fruits6;
-    </script><br>
+    <p id="demo10"></p><br>
 
     <p>The shift() method returns the element that was shifted out:</p>
 
     <p id="demo11"></p>
     <p id="demo12"></p>
-
-    <script>
-        const fruits7 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo11").innerHTML = fruits7.shift();
-        document.getElementById("demo12").innerHTML = fruits7;
-    </script>
 
 <!--THE unshift() METHOD-->
 
@@ -122,25 +74,12 @@
     <p>The unshift() method adds new elements to the beginning of an array:</p>
 
     <p id="demo13"></p>
-    <p id="demo14"></p>
-
-    <script>
-        const fruits8 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo13").innerHTML = fruits8;
-        fruits8.unshift("Lemon");
-        document.getElementById("demo14").innerHTML = fruits8;
-    </script><br>
+    <p id="demo14"></p><br>
 
     <p>The unshift() method returns the length of the new array:</p>
 
     <p id="demo15"></p>
     <p id="demo16"></p>
-
-    <script>
-        const fruits9 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo15").innerHTML = fruits9.unshift("Lemon");
-        document.getElementById("demo16").innerHTML = fruits9;
-    </script>
 
 <!--BRACKET INDEXING-->
 
@@ -151,13 +90,6 @@
     <p id="demo17"></p>
     <p id="demo18"></p>
 
-    <script>
-        const fruits10 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo17").innerHTML = fruits10;
-        fruits10[0] = "Kiwi";
-        document.getElementById("demo18").innerHTML = fruits10;
-    </script>
-
 <!--THE LENGTH PROPERTY-->
 
     <h2>The length Property</h2>
@@ -166,13 +98,6 @@
 
     <p id="demo19"></p>
     <p id="demo20"></p>
-
-    <script>
-        const fruits11 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo19").innerHTML = fruits11;
-        fruits11[fruits11.length] = "Kiwi";
-        document.getElementById("demo20").innerHTML = fruits11;
-    </script>
 
     <!--WARNING !!
         Array elements can be deleted using the JavaScript operator "delete".
@@ -189,16 +114,6 @@
     <p id="demo21"></p>
     <p id="demo22"></p>
 
-    <script>
-        const fruits12 = ["Banana", "Orange", "Apple", "Mango"];
-
-        document.getElementById("demo21").innerHTML = "The first fruit is: " + fruits12[0];
-
-        delete fruits12[0];
-
-        document.getElementById("demo22").innerHTML = "The first fruit is: " + fruits12[0];
-    </script>
-
 <!--MERGING (CONCATENATING) ARRAYS-->
 
     <h2>The concat() Method</h2>
@@ -206,14 +121,6 @@
     <p>The concat() method merges (concatenates) arrays:</p>
 
     <p id="demo23"></p>
-
-    <script>
-        const  myGirls = ["Cecile", "Lone"];
-        const myBoys = ["Emil", "Tobias", "Linus"];
-        const myChildren = myGirls.concat(myBoys);
-
-        document.getElementById("demo23").innerHTML = myChildren;
-    </script>
 
     <!--NB: The concat() method does not change the existing arrays. It always returns a new array.
         The concat() method can take any number of array arguments. It can also take strings as arguments
@@ -259,49 +166,23 @@
 
     <p id="demo27"></p>
     <p id="demo28"></p>
-    <p id="demo29"></p>
-
-    <script>
-        const items1 = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo27").innerHTML = "Original Array:<br> " + items1;
-        let removed = items1.splice(2, 2, "Lemon", "Kiwi");
-        document.getElementById("demo28").innerHTML = "New Array:<br> " + items1;
-        document.getElementById("demo29").innerHTML = "Removed Items:<br> " + removed;
-    </script><br>
+    <p id="demo29"></p><br>
 
     <p>The splice() method can be used to remove array elements:</p>
 
     <p id="demo30"></p>
     <p id="demo31"></p>
 
-    <script>
-        const Items = ["Banana", "Orange", "Apple", "Mango"];
-        document.getElementById("demo30").innerHTML = Items;
-        Items.splice(0, 1);
-        document.getElementById("demo31").innerHTML = Items;
-    </script>
-
     <h2>The slice() Method</h2>
 
     <p>Slice out a part of an array starting from array element 3 ("Apple")</p>
 
-    <p id="demo32"></p>
-
-    <script>
-        const Items1 = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-        const citrus = Items1.slice(3);
-        document.getElementById("demo32").innerHTML = Items1 + "<br><br>" + citrus;
-    </script><br>
+    <p id="demo32"></p><br>
 
     <p>When the slice() method is given two arguments. It selects array elements from the start argument, and up to (but not included) the end argument:</p>
 
     <p id="demo33"></p>
 
-    <script>
-        const Item = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
-        const citrus1 = Item.slice(1,3);
-        document.getElementById("demo33").innerHTML = Item + "<br><br>" + citrus1;
-    </script>
-
+    <script src="JavaScript array methods.js"></script>
 </body>
 </html>
